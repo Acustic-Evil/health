@@ -1,0 +1,596 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>ALKO | DAB</title>
+</head>
+<style>
+    *,
+    *:before,
+    *:after
+    {
+        box-sizing: border-box;
+    }
+    *
+    {
+        margin: 0;
+        padding: 0;
+    }
+    html,
+    head,
+    .body
+    {
+        min-height: 100vh;
+        background-color: #def8ff7a;
+        line-height: 1.8;
+        font-family: Arrial;
+
+
+    }
+    .subtitle
+    {
+        padding: 0 20px;
+        display: flex;
+
+    }
+    .info
+    {
+        margin: 0 auto;
+        width: 45%;
+        font-size: 20px;
+        line-height: 1.5;
+    }
+
+
+    .container
+    {
+
+        margin: 0 auto;
+        width: 1100px;
+        max-width: 100%;
+    }
+    .header
+    {
+        background-color: #62929a	;
+        color:white;
+        position: relative;
+        z-index: 3;
+    }
+
+    .logo
+    {
+        font-size: 40px;
+        text-shadow: 0.05em 0 0 black;
+    }
+
+    hi, h2, h3, h4, h5, div
+    {
+        margin: 0;
+        padding: 0;
+    }
+    .navigation
+    {
+        position: absolute;
+        right: 30px;
+        top: 20px;
+        display: flex;
+        position: absolute;
+        z-index: 10;
+    }
+    .nav-element
+    {
+        font-size: 17px;
+        padding-right: 15px;
+        text-decoration: none;
+        color: white;
+        transition: .6s linear;
+    }
+    .nav-element:hover
+    {
+        text-shadow: (0 0 0 1);
+        text-decoration: underline;
+        color: lightgoldenrodyellow;
+    }
+    .modal
+    {
+        padding:  10px;
+        background-color: #def8ff7a;
+        margin: 10px 0 10px ;
+        color: white;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+    .form-container
+    {
+        margin: 25px auto;
+        border-radius: 10px;
+        width: 85%;
+        background-color: #ffffff66;
+        padding: 20px 30px;
+        box-shadow:0 0 15px 1px rgba(0,0,0,0.2);
+
+    }
+    .modal-content
+    {
+        box-shadow:0 0 15px 4px rgba(0,0,0,0.3);
+        font-size: 25px;
+        max-width: 700px;
+        width: 100%;
+        background-color: #62929a	;
+        border-radius: 10px;
+    }
+
+    .modal-content.contacts
+    {
+        max-width: 800px;
+    }
+
+    .form-title
+    {
+        margin: 10px;
+        font-size: 30px;
+        text-align: center;
+        text-shadow: 0.05em 0 0 black;
+    }
+
+    .main-tatile
+    {
+        margin: 0;
+        font-size: 20px;
+        text-align: center;
+
+    }
+    .form-title.main
+    {
+        text-shadow: none;
+    }
+
+    .form-title.surv
+    {
+        text-shadow: none;
+        font-size: 17px;
+        margin: 0;
+    }
+
+    .field
+    {
+        padding: 10px 0;
+    }
+
+    .line
+    {
+        border-bottom: 1px solid #ffffff6b;
+    }
+    .input-field
+    {
+
+        border-radius: 0;
+        width: 100%;
+        font-size: 17px;
+        border-radius: 5px;
+        height: 30px;
+        outline: none;
+        background: transparent;
+        border: none;
+        color: white;
+        font-family: inherit;
+        padding-bottom: 0;
+
+    }
+
+
+
+    .input-field::placeholder
+    {
+        color:white;
+    }
+
+    .button
+    {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin: 15px 0;
+
+
+    }
+    .submit
+    {
+        margin: 0 10px ;
+        box-shadow:0 0 15px 1px rgba(0,0,0,0.2);
+        border: 1px white;
+        text-shadow: 0.05em 0 0 black;
+        padding: 5px 20px;
+        /* border: none;*/
+        background-color: #ffffff66;
+        border-radius: 10px;
+        color: white;
+        transition: .7s;
+        font-size: 17px;
+    }
+
+    .submit:hover
+    {
+
+        text-shadow: (0 0 0 1);
+        color: lightgoldenrodyellow;
+        cursor: pointer;
+    }
+
+    .button.in
+    {
+        color: white;
+        text-decoration: none;
+        font-size: 17px;
+        transition: .7s;
+    }
+
+    .button.in:hover
+    {
+        text-shadow: (0 0 0 1);
+        text-decoration: underline;
+        color: lightgoldenrodyellow;
+    }
+    .supblock
+    {
+        display: flex;
+    }
+    .block
+    {
+        display: flex;
+        margin: 10px auto;
+        width: 90%;
+        border-bottom: 1px solid #ffffff6b;
+    }
+    .block.last
+    {
+        justify-content: center;
+        border-bottom: none;
+    }
+    .right-img
+    {
+        padding: 2px;
+        line-height: 1.2;
+
+        margin: 0 10px;
+        font-size: 17px;
+
+
+    }
+    .right-img.title
+    {
+        margin: 0;
+    }
+    .right-img.title.main
+    {
+
+        text-align: center;
+    }
+    .right-img.sub
+    {
+        font-size: 15px;
+        margin: 0;
+    }
+    .img
+    {
+        margin: 10px;
+        background-color: transparent;
+
+        max-width: 50px;
+        max-height: 40px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .main-img
+    {
+        background-color: antiquewhite;
+        max-height: 600px;
+        max-width: 1000px;
+        width: 100%;
+        height: 100%;
+        margin: 40px auto;
+    }
+    .survey
+    {
+        background-color: #62929a;
+
+        border-radius: 10px;
+        max-width: 800px;
+        width: 100%;
+
+
+        box-shadow:0 0 15px 1px rgba(0,0,0,0.2);
+        margin: 0 auto;
+    }
+    .survey-cont
+    {
+        width: 85%;
+        margin: 20px auto;
+        border-radius: 10px;
+        background-color: #ffffff66;
+        padding: 20px 40px;
+
+    }
+    .question
+    {
+        text-decoration: none;
+        color: black;
+        border-radius: 10px;
+        background-color: white;
+        padding: 10px 60px;
+        margin: 15px auto;
+        transition: 0.5s;
+        display: block;
+        width: 100%;
+        border: none;
+        animation-delay:
+        color: white;
+        font-size: 15px;
+
+    }
+    .survey-main
+    {
+        font-size: 17px;
+
+    }
+    .profile
+    {
+        height:  100%;
+        max-height: 100vh;
+
+    }
+    .profile-cont
+    {
+        position: fixed;
+        padding: 20px;
+        background-color: papayawhip;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    img
+    {
+
+
+    }
+    .o
+    {
+        text-align: center;
+        background-color: aqua;
+    }
+
+    .listen
+    {
+        padding: 30px 150px ;
+
+    }
+    .nav-element.list
+    {
+        font-size: 26px;
+        color: black;
+
+    }
+
+    .subtitle.states
+    {
+        padding: 10px 0;
+        display: block;
+        font-size: 20px;
+        line-height: 1.6;
+    }
+    .suptitle
+    {
+        font-weight: 550;
+        font-size: 25px;
+
+    }
+    option
+    {
+        color: black;
+        background: none;
+    }
+    .how
+    {
+        padding-left: 20px;
+    }
+    .adm
+    {
+        width: 100%;
+        padding: 10px;
+        font-size: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center
+    }
+    .action
+    {
+        text-decoration: none;
+        color: white;
+        transition: .9s linear;
+    }
+    .action:hover
+    {
+        text-decoration: underline;
+        color: lightgoldenrodyellow;
+        text-shadow: (0 0 0 1);
+    }
+    .experts
+    {
+        max-width: 650px;
+        width: 100%;
+        background-color: #62929a;;
+        margin: 50px auto;
+        border-radius: 10px;
+
+    }
+
+    .form-experts
+    {
+        position: relative;
+        border-radius: 10px;
+        width: 85%;
+        margin: 20px auto;
+        padding:0 15px;
+        background-color: #ffffff66;
+    }
+    .ex-title
+    {
+        color: white;
+        text-align-last: center;
+        padding: 10px;
+        font-size: 30px;
+    }
+    .submit.ex
+    {
+        margin-bottom: 20px;
+    }
+
+    .input.field.ex
+    {
+        width: 100%;
+    }
+    .field.ex
+    {
+        width: 100%;
+        display: flex;
+    }
+    button
+    {
+        padding: 0 8px;
+        border: none;
+        background: none;
+    }
+    button:hover
+    {
+        cursor: pointer;
+    }
+    .line.s
+    {
+        margin-bottom: 10px;
+    }
+    .nav-el {
+        border: none;
+        background: none;
+        font-family: inherit;
+        font-size: 17px;
+        padding-right: 15px;
+        text-decoration: none;
+        color: white;
+        transition: .6s linear;
+    }
+
+</style>
+<body class="body">
+    
+    <header class="header">
+        <div class="container">
+        <div class="logo">DAB Health</div>
+            <div class="navigation">
+                <a class="nav-element" href="/sign_in">Вход</a>
+                <a class="nav-element" href="/">Главная</a>
+                <a class="nav-element" href="/articles">Статьи</a>
+                <a class="nav-element" href="/contacts">Контакты</a>
+
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="form-title main">Как возникает интоксикация после запоя</div>
+        <div class="subtitle states">
+            Неотъемлемая составляющая любого алкогольного напитка — этиловый спирт (этанол). В организме человека этанол вначале превращается в токсичный ацетальдегид, а после — в относительно безопасную уксусную кислоту.<br><br>
+
+            Переработка ацетальдегида обеспечивается особым ферментом ацетальдегиддегидрогеназой, вырабатываемым печенью, вот только возможности организма далеко не безграничны, и чаще всего пьющий вливает в себя этанола в разы больше, чем печень в принципе способна вырабатывать нужные для его расщепления ферменты.<br><br>
+
+            Так и наступает интоксикация, которая иногда даже перерастает в полноценное острое отравление, а потому вывести токсины после запоя нужно как можно скорее. <br><br>
+       
+      
+           Существует 10 основных методов для того, чтобы вывести из организма продукты расщепления этилового спирта.
+        </div>
+        <div class="form-title main">Способы очистки организма от алкоголя</div>
+        <div class="suptitle">1. Обращение в наркологическую клинику</div>
+         <div class="subtitle states">
+            Номером один в списке является, конечно же, обращение к врачу. Современная наркология обладает широчайшим набором медикаментозных и аппаратных средств, чтобы справиться с интоксикацией любого уровня.
+
+             Чаще всего пьющему сразу на дому ставят детоксикационную капельницу, которая нейтрализует оставшийся ацетальдегид, а также восстанавливает кислотно-щелочной и биохимический баланс крови, что приводит к быстрому улучшению самочувствия больного. Состав таких капельниц обычно формируется на месте, исходя из состояния пациента, но в большинстве случаев наркологи используют следующие группы препаратов:<br>
+             <ul class="how">
+             <li>растворы для устранения интоксикации (например, Гемодез);</li>
+             <li>заменители плазмы крови (Реомакродекс);</li>
+             <li>гепатопротекторы (Эссенциале);</li>
+             <li>кардиопротекторы (Триметазидин);</li>
+             <li>ноотропы (Пирацетам);</li>
+             <li>спазмолитики (Но-Шпа);</li>
+             <li>витамины группы B (B1, B6).</li> 
+             </ul>
+             В осложнённых случаях больного могут доставить в стационар, где будет выполнена серия детоксикационных процедур, включающих не только противоалкогольные капельницы, но и плазмаферез или гемодиализ, а также необходимое симптоматическое лечение или даже реанимационные мероприятия.
+        </div>
+        <div class="suptitle">2. Приём сорбентов</div>
+        <div class="subtitle states">Полисорб, Смекта, Энтеросгель, наконец, простой активированный уголь — эти и многие другие препараты из группы сорбентов предназначены для устранения последствий интоксикаций разного происхождения, а потому их часто применяют после запоя сами больные, чтобы улучшить своё состояние.<br><br>
+
+        В принципе, приём сорбентов решение очень правильное, но есть одно большое «но» — они поглощают и нейтрализуют токсины в желудочно-кишечном тракте, а значит, их действие начинается медленнее, чем при постановке внутривенной капельницы.<br><br>
+
+        Применение сорбентов целесообразно в случае непродолжительных запоев (2-3 дня), в остальных же случаях эффект от них будет незначителен.</div>
+        <div class="suptitle">3. Рвота с промыванием желудка</div>
+        <div class="subtitle states">Старый проверенный способ экстренной детоксикации — спровоцировать рвоту путём раздражения корня языка собственными пальцами. Иногда вызывать рвоту рекомендуют дважды: первый раз, чтобы освободить желудок от основного содержимого (выпивки и закуски), а второй раз рвоту нужно спровоцировать, предварительно выпив 1,5-2 литра слабого раствора марганцовки для нейтрализации токсинов.<br><br>
+
+        Недостаток этого способа очевиден: он поможет избавиться только от той порции выпитого алкоголя, которая на данный пребывает в желудке. Этанол, который уже перешёл в кровь, рвотой и марганцовкой нейтрализован не будет.<br><br>
+
+        Хотя нужно признать, что как средство первой помощи провоцирование рвоты бесценно.
+        </div>
+        <div class="suptitle">4. Кисломолочные продукты</div>
+        <div class="subtitle states">В этом случае детоксикационное действие оказывается посредством нормализации микрофлоры кишечника и уменьшения воспалительных процессов в желудке. Говоря проще, употребление кисломолочных продуктов позволяет восстановить нормальную работу пищеварительной системы, которая сразу же включается в «сжигание» токсинов.<br><br>
+
+        Недостатком этого рецепта является его слабая эффективность: при выраженной интоксикации одним питьём кефира обойтись не получиться.
+        </div>
+        <div class="suptitle">5. Отвар овса</div>
+        <div class="subtitle states">1 стакан тщательно промытого овса залить 1 литром воды. Прокипятить 30 минут на медленном огне при плотно закрытой крышке, после чего снять с огня, укутать и дать настояться 10 часов. Пить по 1 стакану перед едой 2-3 раза в день.<br><br>
+
+        Принцип действия отвара овса тот же, что и у кисломолочных продуктов, но детоксикационный эффект значительно сильнее. Это позволяет применять его даже при интоксикации средней степени тяжести.
+        </div>
+        <div class="suptitle">6. Капустный рассол</div>
+        <div class="subtitle states">
+        Применение этого способа рекомендовано в тех случаях, когда от интоксикации больше всего пострадало сердце. Капустный рассол чрезвычайно богат калием, который очень полезен для правильной работы сердечно-сосудистой системы. В целях противоалкогольной очистки достаточно выпивать 1 стакан рассола утром натощак, но при наличии гастрита это может быть небезопасно.
+            
+        </div>
+        <div class="suptitle">7. Медовый раствор</div>
+        <div class="subtitle states">
+        Натуральный мёд обладает отличными очистительными свойствами, а кроме того, в его составе содержится много витаминов и минеральных элементов, что сильно помогает в восстановлении нарушенного обмена веществ.<br><br>
+
+        Мёд рекомендуется пить вместе с зелёным чаем, который тоже в некоторой степени выводит токсины, но можно принимать и обычный медовый раствор: 1-2 чайные ложки мёда на стакан тёплой воды, пить 5-6 раз в день.<br><br>
+
+        Прибегать к детоксикации мёдом нужно с осторожностью из-за риска аллергической реакции на продукты пчеловодства.
+            
+        </div>
+        <div class="suptitle">8. Уксус с водой</div>
+        <div class="subtitle states">
+        По заверениям алкозависимых 1 чайная ложка яблочного уксуса, растворённого в стакане тёплой кипячёной воды и выпитого натощак помогает буквально сразу почувствовать себя значительно лучше.<br><br>
+
+        Правда, следует отметить и то, что при гастрите или язве желудка, а также при нарушении желудочной кислотности, часто возникающем после запоя, пить уксус нежелательно — решая одну проблему можно обрести другую, не менее серьёзную.
+        </div>
+        <div class="suptitle">9. Много-много воды</div>
+        <div class="subtitle states">
+        Ещё один способ вывести токсины из организма: пить много кислых соков — апельсиновый, яблочный, лимонный разбавленный водой и т. д. Употребление большого количества соков (около 2-х литров в сутки) поможет восстановить водно-солевой баланс и вывести остатки алкоголя из крови с мочой.<br><br>
+
+        Важное условие: соки должны быть свежевыжатыми. Пакетированные для целей детоксикации пригодны очень мало.
+        </div>
+        <div class="suptitle">10. Кислые соки</div>
+        <div class="subtitle states">
+        Самый дешёвый и общедоступный способ бороться с токсинами после запоя — просто пить очень много воды (свыше 2-х литров в сутки), чтобы всю детоксикационную работу выполнили почки. Это действительно работает в случае лёгкой интоксикации, но и вся нагрузка тоже возлагается на почки, которые могут не выдержать подобной «промывки».
+        </div>
+       
+    </div>
+</body>
+</html>

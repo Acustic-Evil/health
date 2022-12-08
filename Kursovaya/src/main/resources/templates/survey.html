@@ -1,11 +1,11 @@
 <!doctype html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 
-<head>
-
+<head xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
     <meta charset="utf-8">
-   <!-- <link rel="stylesheet" href="/static/style.css">-->
-    <title>MAIN | DAB</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Survey | DAB</title>
 </head>
 <style>
     *,
@@ -495,37 +495,68 @@
     }
 
 </style>
-
 <body class="body">
     
     <header class="header">
         <div class="container">
         <div class="logo">DAB Health</div>
             <div class="navigation">
-                <a class="nav-element" href="/sign_in">Вход</a>
+                <button class="nav-element" th:action="@{/logout}">Выход</button>
+                <a class="nav-element" href="/">Главная</a>
                 <a class="nav-element" href="/articles">Статьи</a>
                 <a class="nav-element" href="/contacts">Контакты</a>
-
             </div>
         </div>
     </header>
-<div class="container">
-    <div class="form-title main">О компании</div>
-        <div class="subtitle">
-             <div class="info">Компания «DAB Health» была основана в 2014 году с целью предоставить возможность каждому пациенту из любого уголка страны (а теперь уже и Казахстана, Беларуси, Армении) получить максимально качественную диагностику в минимальный срок и с разумными затратами.<br><br>DAB healt- это онлайн врач, который    поможет вам выявить и диагностировать и ликвидировать больные места  наших пациентов. DAB health ставит диагноз на основе ответов более 5000 опрошенных пациентов, а погрешность составляет 0.01%ю.
-                 
+    <div class="container">
+        <div class="form-title main">О компании</div>
+        <div class="survey">
+            <div class="survey-cont">
+                <div class="form-title surv">Выберите вариант ответа</div>
+                <div class="questio"> А что вообще болит, пидор?</div>
+                <select name="question" class="question"> 
+                     <option> 2</option>
+                     <option> 3</option>
+                     <option> 4</option>
+                     <option> 5</option>
+                
+                
+                </select>
             </div>
-            <div class="info">
-            Мы первопроходцы в предоставлении подобных услуг в России. До появления компании, пациенты были вынуждены самостоятельно ходить в медицинские учреждения и дожидаться окончания исследований, тратя на это силы, время и деньги на проезд и проживание.<br><br>
-            Компания функционирует уже более 8 лет и является лучшей врачебно-лечебной системой в России. </div>
-          
-        </div>
-        <div class="img2"></div>
-        <div class="main-img">
-           <img th:src="@{/img/lab_back.jpg}" width="1000px" height="600px">
-        </div>
-    <div class="form-title main">*Лучший онлайн сервис по диагностике заболеваний-DAB-health</div>
+        
+       </div>
+         <div class="survey">
+            <div class="survey-cont">
+                <div class="form-title surv">Выберите вариант ответа</div>
+                <div class="questio"> Что еще болит пидор?</div>
+                <div> <input type="radio" name="questions" value="1"> 1</div>
+                <div> <input type="radio" name="questions" value="2"> 2</div>
+                <div> <input type="radio" name="questions" value="3"> 3</div>
+            </div>
+        
+       </div>
+         <div class="survey">
+            <div class="survey-cont">
+                <div class="form-title surv">Выберите вариант ответа</div>
+                <div class="questio"> Болит голова пидор?</div>
+                <div> <input type="radio" name="questions" value="4"> 4</div>
+                <div> <input type="radio" name="questions" value="5"> 5</div>
+                <div> <input type="radio" name="questions" value="6"> 6</div>
+            </div>
+        
+       </div>
+         <div class="survey">
+            <div class="survey-cont">
+                <div class="form-title surv">Выберите вариант ответа</div>
+                <div class="questio"> Болит жопа пидор?</div>
+                 <div> <input type="radio" name="questions" value="7"> 7</div>
+                <div> <input type="radio" name="questions" value="8"> 8</div>
+                <div> <input type="radio" name="questions" value="9"> 9</div>
+            </div>
+        
+       </div>
+    </div>
     
-</div>
+   
 </body>
 </html>

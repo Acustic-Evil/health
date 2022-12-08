@@ -2,43 +2,43 @@ package com.travelAgency.Kursovaya.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class MainPage {
-    @GetMapping("")
+    @GetMapping("/")
     public String getMainPage(){
         return "index";
     }
 
-    @GetMapping("/bar")
-    public String getBarPage(){return "bar";}
+    @GetMapping("/index_auth")
+    public String getMainAuthPage(){return "index_auth";}
 
-    @GetMapping("/basik")
-    public String getBasikPage(){return "basik";}
+    @GetMapping("/articles")
+    public String getArticlesPage(){
+        return "articles";
+    }
 
-    @GetMapping("/bron")
-    public String getBronPage(){return "bron";}
+    @GetMapping("/Alko")
+    public String getAlkoPage(){
+        return "Alko";
+    }
 
-    @GetMapping("/clubbar")
-    public String getClubBarPage(){return "clubbar";}
+    @GetMapping("/back")
+    public String getBackPage(){
+        return "back";
+    }
 
-    @GetMapping("/deluxe")
-    public String getDeluxePage(){return "deluxe";}
+    @GetMapping("/stomac")
+    public String getStomacPage(){
+        return "stomac";
+    }
 
-    @GetMapping("/hall")
-    public String getHallPage(){return "hall";}
+    @GetMapping("/headache")
+    public String getHeadachePage(){
+        return "headache";
+    }
 
-    @GetMapping("/lux")
-    public String getLuxPage(){return "lux";}
+    @GetMapping("/contacts")
+    public String getContactsPage(){return "contacts";}
 
-    @GetMapping("/luxewith")
-    public String getLuxeWithPage(){return "luxewith";}
-
-    @GetMapping("/veranda")
-    public String getVerandaPage(){return "veranda";}
-
-    @GetMapping ("/about")
-    public String getAboutPage(){return "about";}
 }

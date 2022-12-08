@@ -1,10 +1,10 @@
 <!doctype html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 <head>
-
     <meta charset="utf-8">
-   <!-- <link rel="stylesheet" href="/static/style.css">-->
+    <link rel="stylesheet" href="../static/style.css">
     <title>MAIN | DAB</title>
 </head>
 <style>
@@ -495,16 +495,18 @@
     }
 
 </style>
-
 <body class="body">
     
     <header class="header">
         <div class="container">
         <div class="logo">DAB Health</div>
             <div class="navigation">
-                <a class="nav-element" href="/sign_in">Вход</a>
-                <a class="nav-element" href="/articles">Статьи</a>
-                <a class="nav-element" href="/contacts">Контакты</a>
+                <!--<button class="nav-element" th:action="@{/logout}">Выход</button>-->
+                <form class="nav-el" th:action="@{/logout}" method="post">
+                    <input type="submit" value="Выход"/>
+                </form>
+                <div ><a class="nav-element" href="../contacts">Контакты</a></div>
+                <div ><a class="nav-element" href="../articles">Статьи</a></div>
 
             </div>
         </div>
@@ -520,11 +522,10 @@
             Компания функционирует уже более 8 лет и является лучшей врачебно-лечебной системой в России. </div>
           
         </div>
-        <div class="img2"></div>
+    
         <div class="main-img">
-           <img th:src="@{/img/lab_back.jpg}" width="1000px" height="600px">
+            <img src="../static/img/%D0%BB%D0%B0%D0%B1%20%D1%84%D0%BE%D0%BD.jpg" width="1000px" height="600px">
         </div>
-    <div class="form-title main">*Лучший онлайн сервис по диагностике заболеваний-DAB-health</div>
     
 </div>
 </body>

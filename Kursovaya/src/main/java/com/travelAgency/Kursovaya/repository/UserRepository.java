@@ -1,12 +1,11 @@
-
 package com.travelAgency.Kursovaya.repository;
 
-import com.travelAgency.Kursovaya.entity.Admins;
+import com.travelAgency.Kursovaya.entity.UserSystem;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserRepository extends JpaRepository<Admins,Long>{
-    Admins findByUsername(String username);
-
+public interface UserRepository extends JpaRepository<UserSystem,Long>{
+    UserSystem findByEmail(String login);
+    UserSystem findAllByRoles(String role);
 }

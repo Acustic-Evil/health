@@ -1,6 +1,7 @@
 package com.travelAgency.Kursovaya.service;
 
-import com.travelAgency.Kursovaya.entity.Admins;
+
+import com.travelAgency.Kursovaya.entity.UserSystem;
 import com.travelAgency.Kursovaya.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,17 +14,19 @@ public class UserService{
     @Autowired
     UserRepository userRepository;
 
-    public Admins findUserById(Long userId) {
-        Optional<Admins> userFromDb = userRepository.findById(userId);
-        return userFromDb.orElse(new Admins());
+    public UserSystem findUserById(Long userId) {
+        Optional<UserSystem> userFromDb = userRepository.findById(userId);
+        return userFromDb.orElse(new UserSystem());
     }
 
-    public Admins findUserByLogin(String login){
-        return userRepository.findByUsername(login);
+    public UserSystem findUserByRole(String role) {return userRepository.findAllByRoles(role);}
+
+    public UserSystem findUserByLogin(String login){
+        return userRepository.findByEmail(login);
     }
 
-    public boolean saveUser(Admins user){
-        Admins userFromBD = userRepository.findByUsername(user.getUsername());
+    public boolean saveUser(UserSystem user){
+        UserSystem userFromBD = userRepository.findByEmail(user.getLogin());
 
         if(userFromBD!=null) {
             return false;
@@ -33,34 +36,30 @@ public class UserService{
     }
     public boolean deleteUser(Long ID){
         if(userRepository.findById(ID).isPresent()){
-        userRepository.deleteById(ID);
+            userRepository.deleteById(ID);
             return true;
         }
         return false;
     }
-
-    public Admins findByLogin(String login){
-        return userRepository.findByUsername(login);
-    }
     public void ListAllUsers(){
         int len= userRepository.findAll().size();
         for(int i = 0; i<len; i++){
-            System.out.println(userRepository.findAll().get(i).getUsername()+" "+userRepository.findAll().get(i).getPassword());
+            System.out.println(userRepository.findAll().get(i).getLogin()+" "+userRepository.findAll().get(i).getPassword());
         }
     }
     public void DeleteAllUsers(Boolean uShure){
         if(uShure){
             int len= userRepository.findAll().size();
             for(int i = 0; i<len; i++){
-                userRepository.deleteById(userRepository.findAll().get(i).getId_user());
+                userRepository.deleteById(userRepository.findAll().get(i).getId());
             }
         }
     }
     public void deleteByLogin(String login){
-        Admins userSystem = userRepository.findByUsername(login);
-        userRepository.deleteById(userSystem.getId_user());
+        UserSystem userSystem = userRepository.findByEmail(login);
+        userRepository.deleteById(userSystem.getId());
     }
-    public List<Admins> getAllUsers(){
+    public List<UserSystem> getAllUsers(){
         return userRepository.findAll();
     }
 

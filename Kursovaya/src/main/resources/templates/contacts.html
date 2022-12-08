@@ -1,11 +1,10 @@
 <!doctype html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 
 <head>
-
     <meta charset="utf-8">
-   <!-- <link rel="stylesheet" href="/static/style.css">-->
-    <title>MAIN | DAB</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <title>CONTACTS | DAB</title>
 </head>
 <style>
     *,
@@ -495,7 +494,6 @@
     }
 
 </style>
-
 <body class="body">
     
     <header class="header">
@@ -503,29 +501,74 @@
         <div class="logo">DAB Health</div>
             <div class="navigation">
                 <a class="nav-element" href="/sign_in">Вход</a>
+                <a class="nav-element" href="/">Главная</a>
                 <a class="nav-element" href="/articles">Статьи</a>
-                <a class="nav-element" href="/contacts">Контакты</a>
-
             </div>
         </div>
     </header>
-<div class="container">
-    <div class="form-title main">О компании</div>
-        <div class="subtitle">
-             <div class="info">Компания «DAB Health» была основана в 2014 году с целью предоставить возможность каждому пациенту из любого уголка страны (а теперь уже и Казахстана, Беларуси, Армении) получить максимально качественную диагностику в минимальный срок и с разумными затратами.<br><br>DAB healt- это онлайн врач, который    поможет вам выявить и диагностировать и ликвидировать больные места  наших пациентов. DAB health ставит диагноз на основе ответов более 5000 опрошенных пациентов, а погрешность составляет 0.01%ю.
-                 
-            </div>
-            <div class="info">
-            Мы первопроходцы в предоставлении подобных услуг в России. До появления компании, пациенты были вынуждены самостоятельно ходить в медицинские учреждения и дожидаться окончания исследований, тратя на это силы, время и деньги на проезд и проживание.<br><br>
-            Компания функционирует уже более 8 лет и является лучшей врачебно-лечебной системой в России. </div>
-          
+    <div class="modal">
+    <div class="modal-content contacts">
+        <form class="form">
+           
+                 <div class="form-title">Контакты</div>
+                <div class="form-container">
+                    <div class="supblock">
+                        <div class="block"> 
+
+                            <div class="right-img">
+                                <div class="right-img title">График работы</div>
+                                <div class="right-img sub">ежедневно <br>8:00-21:00</div>
+                            </div>
+                        </div>
+                         <div class="block"> 
+
+                            <div class="right-img">
+                                <div class="right-img title">Контактные телефоны</div>
+                                <div class="right-img sub">+7 495 374-92-07 <br>+7 800 555-92-67 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="supblock">
+                        <div class="block"> 
+
+                            <div class="right-img">
+                                <div class="right-img title">Электронная почта</div>
+                                <div class="right-img sub">info@unim.su</div>
+                            </div>
+                        </div>
+                         <div class="block"> 
+
+                            <div class="right-img">
+                                <div class="right-img title">Пишите нам</div>
+                                <div class="right-img sub">Viber, WhatsApp <br>+7 925 740 05 87</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block last"> 
+
+                        <div class="right-img">
+                            <div class="right-img title main">Адреса наших клиник</div>
+                            <div class="right-img sub">Только город Москва</div>
+                        </div>
+                        
+                    </div>
+                    <div class="supblock">
+                        <div class="block"> 
+                            <div class="right-img">
+                                <div class="right-img sub">Нижний Сусальный пер., 5 стр. 1, <br>Москва, 105067</div>
+                            </div>
+                        </div>
+                        <div class="block"> 
+                            <div class="right-img">
+                                <div class="right-img sub">ул. Новый Арбат, 22/2 строение 1, <br>Москва, 119002</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           
+        </form>
         </div>
-        <div class="img2"></div>
-        <div class="main-img">
-           <img th:src="@{/img/lab_back.jpg}" width="1000px" height="600px">
-        </div>
-    <div class="form-title main">*Лучший онлайн сервис по диагностике заболеваний-DAB-health</div>
     
-</div>
+    </div>
 </body>
 </html>

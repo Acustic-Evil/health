@@ -1,11 +1,10 @@
 <!doctype html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 
 <head>
-
     <meta charset="utf-8">
-   <!-- <link rel="stylesheet" href="/static/style.css">-->
-    <title>MAIN | DAB</title>
+    <link rel="stylesheet" href="css/style.css">
+    <title>ADM | DAB</title>
 </head>
 <style>
     *,
@@ -495,37 +494,36 @@
     }
 
 </style>
-
 <body class="body">
     
     <header class="header">
         <div class="container">
         <div class="logo">DAB Health</div>
             <div class="navigation">
-                <a class="nav-element" href="/sign_in">Вход</a>
-                <a class="nav-element" href="/articles">Статьи</a>
-                <a class="nav-element" href="/contacts">Контакты</a>
+                <div ><a class="nav-element" href="sign_in.html">Вход</a></div>
+                <div ><a class="nav-element" href="index.html">Главная</a></div>
+                 <div ><a class="nav-element" href="profile.html">Мед карта</a></div>
+                <div ><a class="nav-element" href="contacts.html">Контакты</a></div>
+                <div ><a class="nav-element" href="articles.html">Статьи</a></div>
 
             </div>
         </div>
     </header>
-<div class="container">
-    <div class="form-title main">О компании</div>
-        <div class="subtitle">
-             <div class="info">Компания «DAB Health» была основана в 2014 году с целью предоставить возможность каждому пациенту из любого уголка страны (а теперь уже и Казахстана, Беларуси, Армении) получить максимально качественную диагностику в минимальный срок и с разумными затратами.<br><br>DAB healt- это онлайн врач, который    поможет вам выявить и диагностировать и ликвидировать больные места  наших пациентов. DAB health ставит диагноз на основе ответов более 5000 опрошенных пациентов, а погрешность составляет 0.01%ю.
-                 
-            </div>
-            <div class="info">
-            Мы первопроходцы в предоставлении подобных услуг в России. До появления компании, пациенты были вынуждены самостоятельно ходить в медицинские учреждения и дожидаться окончания исследований, тратя на это силы, время и деньги на проезд и проживание.<br><br>
-            Компания функционирует уже более 8 лет и является лучшей врачебно-лечебной системой в России. </div>
-          
+    <div class="container">
+    <div class="modal">
+        <div class="modal-content">
+            <form class="form" method="post">
+                <div class="form-cont">
+                    <div class="form-container">
+                          <div class="adm">
+                            <div><a class="action" href="#">Отобразить список пациентов</a></div>
+                            <div><a class="action" href="/admin/experts">Отобразить список экспертов</a></div>
+                        </div>  
+                    </div>
+                </div>
+            </form>
         </div>
-        <div class="img2"></div>
-        <div class="main-img">
-           <img th:src="@{/img/lab_back.jpg}" width="1000px" height="600px">
-        </div>
-    <div class="form-title main">*Лучший онлайн сервис по диагностике заболеваний-DAB-health</div>
-    
-</div>
+    </div>      
+    </div>
 </body>
 </html>

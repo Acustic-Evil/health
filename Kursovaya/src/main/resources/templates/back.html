@@ -1,0 +1,578 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>BACK DAB</title>
+</head>
+<style>
+    *,
+    *:before,
+    *:after
+    {
+        box-sizing: border-box;
+    }
+    *
+    {
+        margin: 0;
+        padding: 0;
+    }
+    html,
+    head,
+    .body
+    {
+        min-height: 100vh;
+        background-color: #def8ff7a;
+        line-height: 1.8;
+        font-family: Arrial;
+
+
+    }
+    .subtitle
+    {
+        padding: 0 20px;
+        display: flex;
+
+    }
+    .info
+    {
+        margin: 0 auto;
+        width: 45%;
+        font-size: 20px;
+        line-height: 1.5;
+    }
+
+
+    .container
+    {
+
+        margin: 0 auto;
+        width: 1100px;
+        max-width: 100%;
+    }
+    .header
+    {
+        background-color: #62929a	;
+        color:white;
+        position: relative;
+        z-index: 3;
+    }
+
+    .logo
+    {
+        font-size: 40px;
+        text-shadow: 0.05em 0 0 black;
+    }
+
+    hi, h2, h3, h4, h5, div
+    {
+        margin: 0;
+        padding: 0;
+    }
+    .navigation
+    {
+        position: absolute;
+        right: 30px;
+        top: 20px;
+        display: flex;
+        position: absolute;
+        z-index: 10;
+    }
+    .nav-element
+    {
+        font-size: 17px;
+        padding-right: 15px;
+        text-decoration: none;
+        color: white;
+        transition: .6s linear;
+    }
+    .nav-element:hover
+    {
+        text-shadow: (0 0 0 1);
+        text-decoration: underline;
+        color: lightgoldenrodyellow;
+    }
+    .modal
+    {
+        padding:  10px;
+        background-color: #def8ff7a;
+        margin: 10px 0 10px ;
+        color: white;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+    .form-container
+    {
+        margin: 25px auto;
+        border-radius: 10px;
+        width: 85%;
+        background-color: #ffffff66;
+        padding: 20px 30px;
+        box-shadow:0 0 15px 1px rgba(0,0,0,0.2);
+
+    }
+    .modal-content
+    {
+        box-shadow:0 0 15px 4px rgba(0,0,0,0.3);
+        font-size: 25px;
+        max-width: 700px;
+        width: 100%;
+        background-color: #62929a	;
+        border-radius: 10px;
+    }
+
+    .modal-content.contacts
+    {
+        max-width: 800px;
+    }
+
+    .form-title
+    {
+        margin: 10px;
+        font-size: 30px;
+        text-align: center;
+        text-shadow: 0.05em 0 0 black;
+    }
+
+    .main-tatile
+    {
+        margin: 0;
+        font-size: 20px;
+        text-align: center;
+
+    }
+    .form-title.main
+    {
+        text-shadow: none;
+    }
+
+    .form-title.surv
+    {
+        text-shadow: none;
+        font-size: 17px;
+        margin: 0;
+    }
+
+    .field
+    {
+        padding: 10px 0;
+    }
+
+    .line
+    {
+        border-bottom: 1px solid #ffffff6b;
+    }
+    .input-field
+    {
+
+        border-radius: 0;
+        width: 100%;
+        font-size: 17px;
+        border-radius: 5px;
+        height: 30px;
+        outline: none;
+        background: transparent;
+        border: none;
+        color: white;
+        font-family: inherit;
+        padding-bottom: 0;
+
+    }
+
+
+
+    .input-field::placeholder
+    {
+        color:white;
+    }
+
+    .button
+    {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin: 15px 0;
+
+
+    }
+    .submit
+    {
+        margin: 0 10px ;
+        box-shadow:0 0 15px 1px rgba(0,0,0,0.2);
+        border: 1px white;
+        text-shadow: 0.05em 0 0 black;
+        padding: 5px 20px;
+        /* border: none;*/
+        background-color: #ffffff66;
+        border-radius: 10px;
+        color: white;
+        transition: .7s;
+        font-size: 17px;
+    }
+
+    .submit:hover
+    {
+
+        text-shadow: (0 0 0 1);
+        color: lightgoldenrodyellow;
+        cursor: pointer;
+    }
+
+    .button.in
+    {
+        color: white;
+        text-decoration: none;
+        font-size: 17px;
+        transition: .7s;
+    }
+
+    .button.in:hover
+    {
+        text-shadow: (0 0 0 1);
+        text-decoration: underline;
+        color: lightgoldenrodyellow;
+    }
+    .supblock
+    {
+        display: flex;
+    }
+    .block
+    {
+        display: flex;
+        margin: 10px auto;
+        width: 90%;
+        border-bottom: 1px solid #ffffff6b;
+    }
+    .block.last
+    {
+        justify-content: center;
+        border-bottom: none;
+    }
+    .right-img
+    {
+        padding: 2px;
+        line-height: 1.2;
+
+        margin: 0 10px;
+        font-size: 17px;
+
+
+    }
+    .right-img.title
+    {
+        margin: 0;
+    }
+    .right-img.title.main
+    {
+
+        text-align: center;
+    }
+    .right-img.sub
+    {
+        font-size: 15px;
+        margin: 0;
+    }
+    .img
+    {
+        margin: 10px;
+        background-color: transparent;
+
+        max-width: 50px;
+        max-height: 40px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .main-img
+    {
+        background-color: antiquewhite;
+        max-height: 600px;
+        max-width: 1000px;
+        width: 100%;
+        height: 100%;
+        margin: 40px auto;
+    }
+    .survey
+    {
+        background-color: #62929a;
+
+        border-radius: 10px;
+        max-width: 800px;
+        width: 100%;
+
+
+        box-shadow:0 0 15px 1px rgba(0,0,0,0.2);
+        margin: 0 auto;
+    }
+    .survey-cont
+    {
+        width: 85%;
+        margin: 20px auto;
+        border-radius: 10px;
+        background-color: #ffffff66;
+        padding: 20px 40px;
+
+    }
+    .question
+    {
+        text-decoration: none;
+        color: black;
+        border-radius: 10px;
+        background-color: white;
+        padding: 10px 60px;
+        margin: 15px auto;
+        transition: 0.5s;
+        display: block;
+        width: 100%;
+        border: none;
+        animation-delay:
+        color: white;
+        font-size: 15px;
+
+    }
+    .survey-main
+    {
+        font-size: 17px;
+
+    }
+    .profile
+    {
+        height:  100%;
+        max-height: 100vh;
+
+    }
+    .profile-cont
+    {
+        position: fixed;
+        padding: 20px;
+        background-color: papayawhip;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    img
+    {
+
+
+    }
+    .o
+    {
+        text-align: center;
+        background-color: aqua;
+    }
+
+    .listen
+    {
+        padding: 30px 150px ;
+
+    }
+    .nav-element.list
+    {
+        font-size: 26px;
+        color: black;
+
+    }
+
+    .subtitle.states
+    {
+        padding: 10px 0;
+        display: block;
+        font-size: 20px;
+        line-height: 1.6;
+    }
+    .suptitle
+    {
+        font-weight: 550;
+        font-size: 25px;
+
+    }
+    option
+    {
+        color: black;
+        background: none;
+    }
+    .how
+    {
+        padding-left: 20px;
+    }
+    .adm
+    {
+        width: 100%;
+        padding: 10px;
+        font-size: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center
+    }
+    .action
+    {
+        text-decoration: none;
+        color: white;
+        transition: .9s linear;
+    }
+    .action:hover
+    {
+        text-decoration: underline;
+        color: lightgoldenrodyellow;
+        text-shadow: (0 0 0 1);
+    }
+    .experts
+    {
+        max-width: 650px;
+        width: 100%;
+        background-color: #62929a;;
+        margin: 50px auto;
+        border-radius: 10px;
+
+    }
+
+    .form-experts
+    {
+        position: relative;
+        border-radius: 10px;
+        width: 85%;
+        margin: 20px auto;
+        padding:0 15px;
+        background-color: #ffffff66;
+    }
+    .ex-title
+    {
+        color: white;
+        text-align-last: center;
+        padding: 10px;
+        font-size: 30px;
+    }
+    .submit.ex
+    {
+        margin-bottom: 20px;
+    }
+
+    .input.field.ex
+    {
+        width: 100%;
+    }
+    .field.ex
+    {
+        width: 100%;
+        display: flex;
+    }
+    button
+    {
+        padding: 0 8px;
+        border: none;
+        background: none;
+    }
+    button:hover
+    {
+        cursor: pointer;
+    }
+    .line.s
+    {
+        margin-bottom: 10px;
+    }
+    .nav-el {
+        border: none;
+        background: none;
+        font-family: inherit;
+        font-size: 17px;
+        padding-right: 15px;
+        text-decoration: none;
+        color: white;
+        transition: .6s linear;
+    }
+
+</style>
+<body class="body">
+    
+    <header class="header">
+        <div class="container">
+        <div class="logo">DAB Health</div>
+            <div class="navigation">
+                <a class="nav-element" href="/sign_in">Вход</a>
+                <a class="nav-element" href="/">Главная</a>
+                <a class="nav-element" href="/articles">Статьи</a>
+                <a class="nav-element" href="/contacts">Контакты</a>
+
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="form-title main">Компьютер и позвоночник: как избежать болезней?</div>
+        <div class="subtitle states">
+           Сейчас даже дети проводят за компьютером множество времени. Родители с удовольствием увлекают малышей развивающими мультфильмами, познавательными передачами или веселыми играми. И сами тоже часами работают, читают и просто проводят время перед компьютерным экраном. И мало кто задумывается, как это влияет на здоровье в целом и позвоночник в частности. Но как предупредить неприятные болезни?
+        </div>
+        <div class="suptitle">Влияние компьютера на спину </div>
+         <div class="subtitle states">
+           Регулярная работа с компьютером может довольно-таки негативно сказываться на состоянии позвоночника и тех мышц, которые его окружают.<br> Вред в основном провоцируется:<br>
+             <ul class="how">
+             <li>Неподвижностью позы.
+             </li>
+             <li>Согнутостью спины.
+             </li>
+             <li>Недостаточной подвижностью в целом.
+             <li>Искривлением.
+             </li>
+             </ul>
+        </div>
+        <div class="suptitle">Типичные болезни и нарушения
+</div>
+        <div class="subtitle states">При поступлении в организм отравленной пищи, токсины попадают в кишечник, а оттуда через слизистую оболочку проникают в системный кровоток, вызывая клинические проявления. При пищевом отравлении отмечаются следующие симптомы:<br>
+            <ul class="how">
+             <li>Сколиоз.<br>Этот термин используется для обозначения разных искривлений позвоночника. Чаще всего подобные болезни фиксируются у детей и подростков, так как их опорно-двигательный аппарат еще не полностью сформирован и легко поддается негативным воздействиям. Если вовремя не выявить склонность к сколиозу, он будет прогрессировать и может стать причиной нарушений в работе внутренних органов, системы кровоснабжения и пр.
+             </li>
+             <li>Остеохондроз.<br>Если такое заболевание поражает позвоночник, происходят дистрофические процессы в межпозвонковых дисках. При длительной работе за компьютером чаще всего страдают шейный и поясничный отдел. Недуг проявляется болезненностью в области спины, дискомфорт возрастает при резких движениях. Поражения шейного отдела сильно нарушают общее самочувствия, могут становиться причиной головных болей, головокружений, боли в руках и пр.
+             </li>
+             <li>Грыжа межпозвонкового диска.<br>При сидячем образе жизни нарушается питание межпозвонковых дисков, в результате чего в них начинаются дегенеративные процессы. При резком движении или поднятии тяжестей может произойти разрыв фиброзного кольца, окружающего межпозвоночный диск, и смещение ядра диска. Именно такое состояние и называется грыжей. Она вызывает сильную болезненность и прочие нарушения самочувствия.<br><br>
+             </ul>
+            Грамотная профилактика и разумный подход к постоянной занятости за компьютером помогает избежать большинства перечисленных болезней.
+        </div>
+        <div class="suptitle">Элементарные рекомендации и правильная осанка</div>
+        <div class="subtitle states">Совсем не каждый человек может совершенно изменить свой образ жизни и перейти на другую работу для профилактики болезней позвоночника. Но крайне важную роль играет защита детей от подобных заболеваний: родителям необходимо контролировать, сколько времени их чадо проводит перед компьютером и обязательно организовывать ребёнку правильную и регулярную физическую активность. Также важно учить детей с раннего возраста правильно сидеть за столом.<br><br>
+
+        Взрослым же необходимо:<br>
+            <ul class="how">
+             <li>Контролировать собственную осанку. Некоторые специалисты советуют для этого использовать зеркало и постоянно отслеживать в нем положение своего тела.
+             </li>
+             <li>Периодически менять положение позвоночника, а также регулярно делать перерывы для динамической нагрузки (хотя бы подниматься от компьютера на десять минут в час). Можно просто немного пройтись, протереть пыль или подняться по лестнице.
+             </li>
+             <li>Регулярно уделять время физической активности. Упражнения занимают мало времени, но дают неплохой эффект, осанка благодаря им становится правильной, а мышечный корсет отлично поддерживает позвоночник..
+             </li>
+             <li>Приобрести специальный эргономичный стул для работы за компьютером, отыскать инструкцию и отрегулировать его правильно по высоте. Только эта мера позволит на порядок уменьшить нагрузку на позвоночник.
+             </li>
+             <li>Оставаться в правильном положении. Во время работы спина должна быть ровной (ее должно поддерживать кресло), ноги должны находиться на полу, опираясь на полную стопу, а коленные суставы должны сгибаться под прямым углом. Класть ногу на ногу нельзя.
+             </ul><br>
+            Элементарная профилактика болезней позвоночника при длительной работе за компьютером поможет сохранить гибкость и здоровье на долгие годы.
+        </div>       
+        <div class="suptitle">Комплексная профилактика</div>
+        <div class="subtitle states">Для сохранения здоровья позвоночника медики рекомендуют уделять внимание:<br>
+            <ul class="how">
+             <li>Собственному рациону питания.<br>
+             В меню нужно обязательно включать зелень и листовые овощи, разнообразные молокопродукты, жирную рыбу и морепродукты, а также желе, хрящи и морскую капусту. На пользу пойдет потребление рыбьей печени, яичного желтка и качественного сливочного масла.
+             </li>
+             <li>Выбору обуви.<br>
+             Физиологически правильным считается небольшой каблук, а слишком высокие шпильки, равно как и обувь на плоской подошве нарушают опору ног, в результате чего осанка портится.
+             </li>
+             <li>Выбору постели.<br>
+             Избыточная мягкость или жесткость матраца мешает спине полноценно отдыхать по ночам. Человек во сне проводит около трети жизни, поэтому важно, чтобы позвоночник в это время находился в комфорте. Вредной может быть также слишком высокая либо мягкая подушка, а еще коротковатая по длине кровать.
+             </li>
+             <li>Упражнениям для сохранения здоровья позвоночника и крепости мышечного корсета.<br>
+             Особенной эффективностью в этом вопросе отличаются упражнения, выполняемые у вертикальной плоскости с ровной спиной, притянутой к стене, а также занятия на координацию движений, к примеру, «ласточка», «стойка на одной ноге», «ходьба по бревну». Еще стоит заниматься плаванием и верховой ездой, кататься на велосипеде, высоко подняв руль.
+             </ul><br>
+              Предупредить проблемы с позвоночником гораздо легче, чем впоследствии избавиться от таких болезней. Поэтому правильная профилактика действительно является залогом здоровья.
+        </div> 
+    </div>
+    
+</body>
+</html>
