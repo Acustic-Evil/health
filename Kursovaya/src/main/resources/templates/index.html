@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Hotel TMI</title>
+</head>
+
+<body class="body">
+    <div class="intro">
+        <div class="intro_title">Hotel TMI</div>
+    </div>
+
+<div class="main">
+    <div class="main_title">Преимущества проживания</div>
+    <div class="main_block">
+    
+        <div class="text">В комплексе находятся модные московские рестораны и бары: от must visit панорамных заведений под шпилем, до знаменитого русского ресторана «Матрешка» и популярной концепции бельгийского пивного ресторана<br><br> Перед отелем находится комфортабельная подземная парковка по городскому тарифу. Имеется автомойка. Скидки для заказчиков крупных мероприятий. Бесплатная общественная парковка перед отелем.</div>
+        <div class="text">В комплексе находятся модные московские рестораны и бары: от must visit панорамных заведений под шпилем, до знаменитого русского ресторана «Матрешка» и популярной концепции бельгийского пивного ресторана<br><br> Перед отелем находится комфортабельная подземная парковка по городскому тарифу. Имеется автомойка. Скидки для заказчиков крупных мероприятий. Бесплатная общественная парковка перед отелем.</div>
+    </div>
+<div class="main_title">Номера и аппартаменты</div>
+    <div class="bwpic">
+        <div class="pic">
+         <img th:src="@{/img/1.1.1.jpg}" alt="picture not found" width="100%" height="100%"></div>
+        
+        <div class="rigt_of_pic"> 
+            <div class="tit_right">Апартаменты делюкс</div>
+            <div><a class="btn" href="/deluxe">Подробнее</a></div>
+        </div>
+    </div>
+     <div class="bwpic">
+        <div class="pic">
+         <img th:src="@{/img/1.2.jfif}" alt="picture not found" width="100%" height="100%"></div>
+        
+        <div class="rigt_of_pic"> 
+            <div class="tit_right">Люкс с двуместным размещением</div>
+            <div><a class="btn" href="/lux">Подробнее</a></div>
+        </div>
+    </div>
+     <div class="bwpic">
+        <div class="pic">
+         <img th:src="@{/img/1.3.jfif}" alt="picture not found" width="100%" height="100%"></div>
+        
+        <div class="rigt_of_pic"> 
+            <div class="tit_right">Люкс с одноместным размещением</div>
+            <div><a class="btn" href="/luxewith">Подробнее</a></div>
+        </div>
+    </div>
+     <div class="btn2">Для бронирования позвоните по этому номеру<br>+79017295584</div>
+</div>
+      
+ <div class="nav">
+    <div class="nav_up">
+        <div class="nav_title"> Рзамещение
+            <div ><a class="link" href="/luxewith">Люкс с одноместным размещением</a ></div>
+            <div ><a class="link" href="/lux">Люкс с двуместным размещением</a ></div>
+            <div ><a class="link" href="/deluxe">Aпартаменты ДеЛюкс</a ></div>
+        </div>
+
+        <div class="nav_title">Предоставляемое пространство
+             <div ><a class="link" href="/basik">Бассейн</a ></div>
+             <div ><a class="link" href="/hall">Банкетный зал</a ></div>
+        </div>
+
+          <div class="nav_title"> Рестораны
+            <div ><a class="link" href="/veranda">Веранда</a ></div>
+            <div ><a class="link" href="/clubbar">Клубный бар</a ></div>
+            <div ><a class="link" href="/bar">TMI Restaurant</a ></div>
+        </div>
+
+        <div  class="nav_title">
+            <div>+79017295584 </div>
+            <div>г.Москва, ул Подводная, д63</div>
+            <div><a class="link" href="/about">О гостинице</a></div>
+            <div><a id="btn-win" class="btn btn-adm">Вход для адиминистратора</a></div>
+        </div> 
+    </div>
+</div>
+
+     <form action="" id="modalWin" class="modal" method="post">
+        <div class="modal-window">
+            <div class="close" >X</div>
+            <div><input class="Pool" type="text" placeholder="Логин" name="username" ></div>
+            <div><input class="Pool" type="password" placeholder="Пароль" name="password" ></div>
+            <input type="submit" class="link-btn" value="Вход">
+        </div>
+        <div  class="over" ></div>
+    </form>
+    
+    <script> 
+ let popup=document.getElementById('modalWin'),
+     popupToggle=document.getElementById('btn-win'),
+     popupClose=document.querySelector('.close');
+
+     popupToggle.onclick=function()
+     {
+         popup.style.display="flex";
+     }
+     popupClose.onclick=function()
+     {
+         popup.style.display="none";
+     }
+     
+    window.onclick=function(event)
+     {
+        if(event.target===popup)
+            {
+              popup.style.display="none";  
+            }
+     }
+    </script>
+</body>
+</html>
+

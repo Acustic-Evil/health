@@ -1,0 +1,308 @@
+body
+{
+    background-color: #80808054;
+    margin: 0;
+    line-height: 1.5;
+    font-family: Arrial;
+}
+
+            /*iNTRO*/
+
+.intro
+{
+    text-shadow: .09em 0 0 black;
+    background: url(/img/1.jfif) center no-repeat;
+    text-align: center;
+    width: 100%;
+    height: 270px;
+    text-transform: uppercase;
+    font-size: 30px;
+    color: white;
+    padding-bottom: 80px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+}
+
+
+            /*MAIN*/
+h1, h2, h3, h4, h5
+{
+    margin: 0;
+    padding: 0;
+}
+
+.main
+{
+   
+    font-size: 25px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 40px;
+   
+}
+.main_title
+{
+    font-family: Javanese;
+    font-size: 25px;
+    color: black;
+    text-align: center;
+    padding: 20px 0;
+    text-transform: uppercase;
+}
+.main_block
+{
+    display: flex;
+}
+
+.text
+{
+   
+    font-size: 20px;
+    padding: 0 40px;
+    padding-bottom: 20px;
+}
+
+.bwpic
+{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    padding-top: 20px;
+    margin-bottom: 50px;
+    
+}
+
+.pic
+{
+    max-width: 650px;
+    max-height: 350px;
+    border-radius: 15px;
+    
+}
+
+.tit_right
+{
+   padding-top: 20px;
+  margin-bottom: 150px;
+text-align: center;
+}
+
+.rigt_of_pic
+{
+     font-size: 25px;
+    margin: 0 auto;
+    text-align: center;
+    width: 22%;
+}
+
+
+
+            /*nAVIGATION/FOOTER*/
+.nav
+{
+   
+    padding: 0 10px;
+    text-align: left;
+    color: white;
+    background-color: #403f3f; 
+}
+
+.nav_up
+{
+    margin: 0 auto;
+    padding: 10px;
+    justify-content: space-between;
+    display: flex; 
+}
+
+.nav_title
+{
+font-size: 22px;
+ text-align: left;
+}
+
+.link
+{
+    font-size: 17px;
+    color:white;
+    text-decoration: none;
+    margin: 5px 0;
+    transition: 0.5s;
+}
+
+
+            /*BUTTON*/
+.btn
+{
+    background-color: dimgray; 
+    text-decoration: none;
+    border-radius: 15px;
+    text-align: center;
+    display: block;
+    padding: 30px 60px;
+    color: white;
+    transition: 0.5s;
+    margin: auto;
+}
+
+.btn2
+{
+    text-align: center;
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+    background-color: dimgray;
+    padding: 30px 60px;
+    width: 50%;
+    margin: auto;
+    display: block;
+    transition: 0.5s;
+}
+
+.btn.btn-adm
+    {
+        font-size: 18px;
+        padding: 0 10px ;
+        margin-top: 5px; 
+        cursor: pointer;
+    }
+
+.btn:hover
+{
+    /*border: 1px solid #cedc8e;*/
+    background-color:  #474646;
+    color:gray;
+}
+
+.link:hover
+{
+    color: gray;
+    text-decoration: underline;
+}
+
+
+body
+{ 
+    
+    margin: 0;
+    line-height: 1.5;
+    font-family: Arrial;
+  
+}
+
+.Pool
+{
+    padding: 20px 85px;
+    border-radius: 15px;
+    font-size: 20px;
+    margin: 15px auto;
+}
+#window
+{
+    position: relative;
+   /* display: none;*/
+    width: 100%;
+    max-width: 600px;
+    z-index: 1000;
+     margin: auto;
+    height: 330px; 
+    vertical-align: middle;
+}
+
+
+.forma
+{
+    text-align: center;
+    background-color: gray;
+    margin:  300px auto;
+    padding: 20px 85px;
+    border-radius: 15px;
+     transition: 0.5s;
+    
+}
+
+.link-btn
+{
+   
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+    border-radius: 15px;
+    background-color: white;
+    padding: 15px 85px;
+    margin:15px auto;
+    transition: 0.5s;
+    display: block;
+   
+    
+}
+
+.link-btn:hover, 
+.Pool:hover
+{
+    border: 2px solid black;
+    background-color:  #474646;
+    color:white;
+}
+
+.modal
+{
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    
+}
+
+.modal .over
+{
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+  /*  background-color: rgba(0,0,0, .3);*/
+    opacity: 0.6;
+    z-index: 0;
+}
+
+.modal-window
+{
+    padding: 15px 85px;
+    background-color: gray;
+    position: relative;
+    z-index: 2;
+    border-radius: 15px;
+    max-width: 700px;
+    box-shadow: 0 10px 15px rgba(0,0,0, .2);
+    
+}
+.close
+{
+    background: none;
+    border: none;
+    opacity: 0.7;
+    cursor:pointer;
+    position: absolute;
+    
+    right: 10px;
+    top: 5px;
+    font-family: cursive;
+    
+}
+.btn-close:hover
+{
+    opacity: 1;
+}
+
+
