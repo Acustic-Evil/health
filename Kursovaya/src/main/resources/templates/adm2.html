@@ -503,7 +503,6 @@
             <div class="navigation">
                 <div ><a class="nav-element" href="sign_in.html">Вход</a></div>
                 <div ><a class="nav-element" href="index.html">Главная</a></div>
-                 <div ><a class="nav-element" href="profile.html">Мед карта</a></div>
                 <div ><a class="nav-element" href="contacts.html">Контакты</a></div>
                 <div ><a class="nav-element" href="articles.html">Статьи</a></div>
 
@@ -546,6 +545,7 @@
                             <tbody>
                             <tr th:each="UserSystem: ${expert}">
                                 <td><span th:text="UserSystem.findAllByRole('expert')"></span></td>
+
                             </tr>
                             </tbody>
 
@@ -555,6 +555,8 @@
                         <!--<div class="input-field ex" id="fullname">ФИО</div>
                         <div class="input-field ex" id="login">Логин</div>
                         <div class="input-field ex" id="password">Пароль</div>-->
+
+
                         <button>&#10005;</button> 
                         <div> </div>
                        

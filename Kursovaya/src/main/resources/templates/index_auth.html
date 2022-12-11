@@ -501,10 +501,7 @@
         <div class="container">
         <div class="logo">DAB Health</div>
             <div class="navigation">
-                <!--<button class="nav-element" th:action="@{/logout}">Выход</button>-->
-                <form class="nav-el" th:action="@{/logout}" method="post">
-                    <input type="submit" value="Выход"/>
-                </form>
+                <div ><a class="nav-element" href="/logout">Выход</a></div>
                 <div ><a class="nav-element" href="../contacts">Контакты</a></div>
                 <div ><a class="nav-element" href="../articles">Статьи</a></div>
 
@@ -524,7 +521,7 @@
         </div>
     
         <div class="main-img">
-            <img src="../static/img/%D0%BB%D0%B0%D0%B1%20%D1%84%D0%BE%D0%BD.jpg" width="1000px" height="600px">
+            <img src="/img/lab_back.jpg" width="1000px" height="600px">
         </div>
     
 </div>

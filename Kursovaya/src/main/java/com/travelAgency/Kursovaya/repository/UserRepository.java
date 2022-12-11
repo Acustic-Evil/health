@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserRepository extends JpaRepository<UserSystem,Long>{
-    UserSystem findByEmail(String login);
-    UserSystem findAllByRoles(String role);
+    UserSystem findByUsername(String username);
+    UserSystem findByRoles(String role);
 }

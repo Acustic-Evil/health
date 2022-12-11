@@ -1,10 +1,7 @@
 
 package com.travelAgency.Kursovaya.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class UserSystem {
@@ -13,7 +10,8 @@ public class UserSystem {
 
     private String roles;
     private String full_name;
-    private String email;
+    @Column(unique = true)
+    private String username;
     private String password;
 
     public UserSystem() {
@@ -21,13 +19,13 @@ public class UserSystem {
 
     public UserSystem( String full_name, String login, String role, String password) {
         this.full_name = full_name;
-        this.email = login;
+        this.username = login;
         this.roles = role;
         this.password = password;
     }
-    public UserSystem( String full_name, String login, String password) {
+    public UserSystem(String full_name, String login, String password) {
         this.full_name = full_name;
-        this.email = login;
+        this.username = login;
         this.password = password;
     }
 
@@ -43,8 +41,8 @@ public class UserSystem {
         return full_name;
     }
 
-    public String getLogin() {
-        return email;
+    public String getUsername() {
+        return username;
     }
 
     public String getPassword() {
@@ -59,8 +57,8 @@ public class UserSystem {
         this.full_name = fullName;
     }
 
-    public void setLogin(String login) {
-        this.email = login;
+    public void setUsername(String login) {
+        this.username = login;
     }
 
     public void setPassword(String password) {

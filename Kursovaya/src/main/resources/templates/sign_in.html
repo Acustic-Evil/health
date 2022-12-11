@@ -510,12 +510,12 @@
     <div class="modal">
     <div class="modal-content">
 
-        <form class="form" method="post" th:action="@{/sign_in}">
+        <form class="form" method="post" action="/sign_in">
             <div class="form-cont">
                 <div class="form-title">Вход</div>
                 <div class="form-container">
                      <div class="field">
-                          <input class="input-field" type="email" id="email" name="email" placeholder="Введите e-mail">
+                          <input class="input-field" type="email" name="username" placeholder="Введите e-mail">
                          <div class="line"></div>
                     </div>
                     <div class="field">
@@ -523,13 +523,10 @@
                         <div class="line"></div>
                     </div>
                 </div>
-                <div class="err-mess" th:if="${param.error}">
-                    Неправильная почта или пароль
-                </div>
-
                 <div class="button">
                     <button class="submit" type="submit">Войти</button>
                 </div>
+
                 <div>
                     <a class="button in" href="/sign_up">У меня нет аккаунта - регистрация</a>
                 </div>
