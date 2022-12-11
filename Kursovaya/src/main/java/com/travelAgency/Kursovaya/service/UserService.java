@@ -1,7 +1,6 @@
-/*
 package com.travelAgency.Kursovaya.service;
 
-import com.travelAgency.Kursovaya.entity.UserSystem;
+import com.travelAgency.Kursovaya.entity.Admins;
 import com.travelAgency.Kursovaya.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,19 +13,19 @@ public class UserService{
     @Autowired
     UserRepository userRepository;
 
-    public UserSystem findUserById(Long userId) {
-        Optional<UserSystem> userFromDb = userRepository.findById(userId);
-        return userFromDb.orElse(new UserSystem());
+    public Admins findUserById(Long userId) {
+        Optional<Admins> userFromDb = userRepository.findById(userId);
+        return userFromDb.orElse(new Admins());
     }
 
-    public UserSystem findUserByLogin(String login){
+    public Admins findUserByLogin(String login){
         return userRepository.findByUsername(login);
     }
 
-    public boolean saveUser(UserSystem user){//согласен, роль так делать очень грамостко, но всё же
-        UserSystem userFromeBD = userRepository.findByUsername(user.getLogin());
+    public boolean saveUser(Admins user){
+        Admins userFromBD = userRepository.findByUsername(user.getUsername());
 
-        if(userFromeBD!=null) {
+        if(userFromBD!=null) {
             return false;
         }
         userRepository.save(user);
@@ -34,43 +33,35 @@ public class UserService{
     }
     public boolean deleteUser(Long ID){
         if(userRepository.findById(ID).isPresent()){
-          */
-/*Role roleClass = userService.findRole(role);
-        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-        if(!userService.saveUser(new UserSystem(roleClass, fullName, login, bCryptPasswordEncoder.encode(password)))){
-            return "redirect:/signup";
-        }
-        System.out.println("New user: "+fullName+"; login: "+login+" "+roleClass.getRole());*//*
-  userRepository.deleteById(ID);
+        userRepository.deleteById(ID);
             return true;
         }
         return false;
     }
 
-    public UserSystem findByLogin(String login){
+    public Admins findByLogin(String login){
         return userRepository.findByUsername(login);
     }
     public void ListAllUsers(){
         int len= userRepository.findAll().size();
         for(int i = 0; i<len; i++){
-            System.out.println(userRepository.findAll().get(i).getLogin()+" "+userRepository.findAll().get(i).getPassword());
+            System.out.println(userRepository.findAll().get(i).getUsername()+" "+userRepository.findAll().get(i).getPassword());
         }
     }
     public void DeleteAllUsers(Boolean uShure){
         if(uShure){
             int len= userRepository.findAll().size();
             for(int i = 0; i<len; i++){
-                userRepository.deleteById(userRepository.findAll().get(i).getId());
+                userRepository.deleteById(userRepository.findAll().get(i).getId_user());
             }
         }
     }
     public void deleteByLogin(String login){
-        UserSystem userSystem = userRepository.findByUsername(login);
-        userRepository.deleteById(userSystem.getId());
+        Admins userSystem = userRepository.findByUsername(login);
+        userRepository.deleteById(userSystem.getId_user());
     }
-    public List<UserSystem> getAllUsers(){
+    public List<Admins> getAllUsers(){
         return userRepository.findAll();
     }
 
 }
-*/

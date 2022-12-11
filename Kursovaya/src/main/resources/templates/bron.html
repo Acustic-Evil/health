@@ -1,94 +1,76 @@
-
-<!--<body>
-    
-    <button id="btn-win"> Регистрация</button>
-    
-    
-    <div id="modalWin" class="modal">
-        <div class="modal-window">
-            <button class="btn-close" >X</button>
-            <div><input class="Pool" type="email" placeholder="Логин" name="email" ></div>
-            <div><input class="Pool" type="password" placeholder="Пароль" name="password" ></div>
-            <div><a class="link-btn" href="foradm.html" >Вход</a></div>
-        </div>
-        
-        <div  class="over" ></div>
-    </div>
-    -->
-<!--    <script> 
- let popup=document.getElementById('modalWin'),
-     popupToggle=document.getElementById('btn-win'),
-     popupClose=document.querySelector('.btn-close');
-
-     popupToggle.onclick=function()
-     {
-         popup.style.display="flex";
-     }
-     popupClose.onclick=function()
-     {
-         popup.style.display="none";
-     }
-     
-    window.onclick=function(event)
-     {
-        if(event.target==popup)
-            {
-              popup.style.display="none";  
-            }
-     }
-    </script>-->
-<!--</body>
-</html>-->
-
 <!doctype html>
 <html>
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/static/css/bron.css">
-   <title>Book</title>
+    <title>Book</title>
 </head>
-    <body>
-        <div class="intro">
-            <div class="intro_title"><a class="link link-title" href="/">Hotel TMI</a></div>
-        </div>
-            <form action="" id="modalWin" class="modal" method="post">
-                <div class="modal-window">
-                    <a class="close2" href="index.html">X</a>
-                    <div class="main_title form">Бронирование</div>
-                    <div><input class="namespace" type="text" placeholder="Имя" name="name"></div>
-                    <div><input class="namespace" type="text" placeholder="Фамилия" name="last_name"></div>
-                    <div><input class="namespace" type="text" placeholder="Отчество" name="middle_name"></div>
-                    <div><input class="namespace" type="text" placeholder="Email" name="email"></div>
-                    <select name="rooms" class="link-btn count" >
-                            <option value="">Выберите комнату</option>
-                            <option value="Люкс с одноместным размещением" name="1">Люкс с одноместным размещением</option>
-                            <option value="Люкс с двуместным размешением" name="2">Люкс с двуместным размещением</option>
-                            <option value="Апартаменты ДеЛюкс" name="3">Апартаменты ДеЛюкс</option>
-                    </select>
-                    <select name="guests" class="link-btn count">
-                        <option value="">Выберите количество гостей</option>
-                        <option value="1 взрослый">1 взрослый</option>
-                        <option value="1 взрослый 1 ребенок">1 взрослый 1 ребенок</option>
-                        <option value="1 взрослый 2 ребенка">1 взрослый 2 ребенка</option>
-                        <option value="2 взрослых">2 взрослых</option>
-                        <option value="2 взрослых 1 ребенок">2 взрослых 1 ребенок</option>
-                        <option value="2 взрослых 2 ребенка" >2 взрослых 2 ребенка</option>
-                    </select>
-                    <input class="Pool" type="date" placeholder="none" name="datein">
-                    <input class="Pool" type="date" placeholder="none" name="dateout">
-                    <input type="submit" class="link-btn" value="Бронировать">
-                </div>
-                <div  class="over" ></div>
-            </form>
+<body>
+<div class="intro">
+    <div class="intro_title"><a class="link link-title" href="/">Hotel TMI</a></div>
+</div>
+<form action="" id="modalWin" class="modal">
+    <div class="modal-window">
+        <a class="close2" href="/">&#10006;</a>
+        <div class="main_title form">Бронирование</div>
+        <select name="rooms" class="link-btn count" >
+            <option value="">Выбор комнаты</option>
+            <option value="Люкс с одноместным размещением" name="1">Люкс с одноместным размещением</option>
+            <option value="Люкс с двуместным размешением" name="2">Люкс с двуместным размещением</option>
+            <option value="Апартаменты ДеЛюкс" name="3">Апартаменты ДеЛюкс</option>
+        </select>
+        <select name="guests" class="link-btn count">
+            <option value="">Выбор количества гостей</option>
+            <option value="1 взрослый">1 взрослый</option>
+            <option value="1 взрослый 1 ребенок">1 взрослый 1 ребенок</option>
+            <option value="1 взрослый 2 ребенка">1 взрослый 2 ребенка</option>
+            <option value="2 взрослых">2 взрослых</option>
+            <option value="2 взрослых 1 ребенок">2 взрослых 1 ребенок</option>
+            <option value="2 взрослых 2 ребенка" >2 взрослых 2 ребенка</option>
+        </select>
+        <input class="Pool k " type="text" placeholder="Введите фио" name="email">
+        <input class="Pool s" type="tel" placeholder="Номер телефона" name="name">
 
-          <form id="modalWin2" class="modal modal2">
-                <div class="modal-window modal-window2">
-                   <div class="text">
-                       <a class="btn-close1" href="/">X</a>
-                  Извините, но данная дата и номер заняты. Вы не можете забронировать данный номер на эту дату.<br> Пожалуйста попробуйте выбрать другую дату для брони номера или обратиться к персоналу отеля.<br> Так же попробуйте выбрать другие виды номеров. <br> Для выхода нажмите на крестик.
-                    </div>
-                </div>
-                <div  class="over" ></div>
-            </form>
-    </body>
+        <input class="Pool s" type="email" placeholder="Email" name="email">
+
+        <input class="Pool s" type="date" placeholder="Дата въезда" name="datein">
+        <input class="Pool s" type="date" placeholder="Дата въезда" name="dateout">
+        <input type="submit" class="link-btn" value="Бронировать">
+    </div>
+    <div  class="over" ></div>
+</form>
+
+<form id="modalWin2" class="modal modal2">
+    <div class="modal-window modal-window2">
+        <div class="text">
+            <div class="btn-close1" >x</div>
+            Извините, но данная дата и номер заняты. Вы не можете забронировать данный номер на эту дату.<br> Пожалуйста попробуйте выбрать другую дату для брони номера или обратиться к персоналу отеля.<br> Так же попробуйте выбрать другие виды номеров. <br> Для выхода нажмите на крестик.
+        </div>
+    </div>
+    <div  class="over" ></div>
+</form>
+<script>
+    let popup=document.getElementById('modalWin2'),
+        popupToggle=document.getElementById('btn-win2'),
+        popupClose=document.querySelector('.btn-close1');
+
+    popupToggle.onclick=function()
+    {
+        popup.style.display="flex";
+    }
+    popupClose.onclick=function()
+    {
+        popup.style.display="none";
+    }
+
+    window.onclick=function(event)
+    {
+        if(event.target==popup)
+        {
+            popup.style.display="none";
+        }
+    }
+</script>
+
+</body>
 </html>

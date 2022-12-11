@@ -17,7 +17,7 @@ body
     height: 270px;
     text-transform: uppercase;
     font-size: 30px;
-    color: white;
+    color: white;;
     padding-bottom: 80px;
     background-size: cover;
     display: flex;
@@ -53,6 +53,8 @@ h1, h2, h3, h4, h5
 }
 .main_block
 {
+  margin: 5px;
+    padding-right: 30px;
     display: flex;
 }
 
@@ -70,6 +72,7 @@ h1, h2, h3, h4, h5
     width: 100%;
     max-width: 1300px;
     display: flex;
+    padding-left: 20px;
     padding-top: 20px;
     margin-bottom: 50px;
     
@@ -86,12 +89,13 @@ h1, h2, h3, h4, h5
 .tit_right
 {
    padding-top: 20px;
-  margin-bottom: 150px;
+  /*margin-bottom: 150px;*/
 text-align: center;
 }
 
 .rigt_of_pic
 {
+    position: relative;
      font-size: 25px;
     margin: 0 auto;
     text-align: center;
@@ -120,6 +124,8 @@ text-align: center;
 
 .nav_title
 {
+    position: relative;
+    width: 25%;
 font-size: 22px;
  text-align: left;
 }
@@ -137,11 +143,18 @@ font-size: 22px;
             /*BUTTON*/
 .btn
 {
-    background-color: dimgray; 
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    /*text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;*/
+    background-color: dimgray;
     text-decoration: none;
     border-radius: 15px;
     text-align: center;
-    display: block;
+    /*display: block;*/
     padding: 30px 60px;
     color: white;
     transition: 0.5s;
@@ -170,6 +183,7 @@ font-size: 22px;
         cursor: pointer;
     }
 
+.btn2:hover, 
 .btn:hover
 {
     /*border: 1px solid #cedc8e;*/
@@ -195,11 +209,21 @@ body
 
 .Pool
 {
+    text-align: center;
+    width: 60%;
     padding: 20px 85px;
     border-radius: 15px;
     font-size: 20px;
-    margin: 15px auto;
+    margin: 0 auto;
+    margin-bottom: 10px;
 }
+/*.Pool
+{
+    padding: 20px 85px;
+    border-radius: 15px;
+    font-size: 20px;
+    margin-bottom: 10px auto;
+}*/
 #window
 {
     position: relative;
@@ -223,21 +247,19 @@ body
      transition: 0.5s;
     
 }
-
 .link-btn
 {
-   
+    text-align: center;
     text-decoration: none;
     color: black;
     font-size: 25px;
     border-radius: 15px;
     background-color: white;
-    padding: 15px 85px;
-    margin:15px auto;
+    padding: 15px 185px;
+    margin:0 auto;
+    margin-bottom: 10px;
     transition: 0.5s;
     display: block;
-   
-    
 }
 
 .link-btn:hover, 
@@ -263,7 +285,7 @@ body
     
 }
 
-.modal .over
+.modal.over
 {
     background-color: #000;
     position: absolute;
@@ -304,5 +326,6 @@ body
 {
     opacity: 1;
 }
+
 
 

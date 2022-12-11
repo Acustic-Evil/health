@@ -4,6 +4,7 @@ body
     margin: 0;
     line-height: 1.5;
     font-family: Arrial;
+    min-height: 100vh;
 }
 
             /*iNTRO*/
@@ -123,6 +124,7 @@ text-align: center;
 
 .nav_title
 {
+     width: 25%;
 font-size: 22px;
  text-align: left;
 }
@@ -174,7 +176,7 @@ font-size: 22px;
 .btn2:hover, 
 .btn:hover
 {
-    border: 1px solid #cedc8e;
+    /*border: 1px solid #cedc8e;*/
     background-color:  #474646;
     color:gray;
 }

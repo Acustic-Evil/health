@@ -1,6 +1,6 @@
 package com.travelAgency.Kursovaya.config;
 
-/*import com.travelAgency.Kursovaya.service.UserDetailServiceConfig;*/
+import com.travelAgency.Kursovaya.service.UserDetailServiceConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -16,8 +16,8 @@ import javax.sql.DataSource;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private DataSource dataSource;
-   /* @Autowired
-    UserDetailServiceConfig userService;*/
+    @Autowired
+    UserDetailServiceConfig userService;
     @Override
     public void configure(HttpSecurity httpSecurity) throws Exception{
         httpSecurity
@@ -25,21 +25,25 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .httpBasic()
                 .and()
                 .authorizeRequests()
-                    .antMatchers("/","/index/**").permitAll()
-                    .antMatchers("/foradm/**").hasAuthority("admin")
-                    .antMatchers("/index").not().authenticated()
+                    .antMatchers("/").permitAll()
+                    .antMatchers("/admin/**").hasAuthority("admin")
+                    .antMatchers("/").not().authenticated()
                 .and()
                     .formLogin()
-                        .loginPage("/index")
-                        .permitAll();
+                        .loginPage("/")
+                        .defaultSuccessUrl("/admin")
+                        .permitAll()
+                .and()
+                    .logout()
+                    .logoutSuccessUrl("/")
+                    .permitAll();
     }
 
-    /*@Autowired
+    @Autowired
     public void configure(AuthenticationManagerBuilder auth) throws Exception{
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         auth
                 .userDetailsService(userService)
                 .passwordEncoder(passwordEncoder);
-    }*/
-
+    }
 }

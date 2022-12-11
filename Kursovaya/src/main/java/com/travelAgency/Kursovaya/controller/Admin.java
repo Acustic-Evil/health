@@ -1,8 +1,9 @@
-/*
 package com.travelAgency.Kursovaya.controller;
 
-import com.travelAgency.Kursovaya.service.HotelService;
+import com.travelAgency.Kursovaya.entity.Admins;
+import com.travelAgency.Kursovaya.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,33 +15,22 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/admin")
 public class Admin {
 
-    @Autowired
-    HotelService hotelService;
-
     @GetMapping("")
-    public String getAdminPage(Model model){
-        model.addAttribute("allUsers", hotelService.getAllHotel());
-        return "adminmenu";
-    }
+    public String getAdminPage() {return "foradm";}
 
-    @PostMapping("/addHotel")
-    public String createHotel(@RequestParam(value = "name",required = false)String name, @RequestParam(value = "address",required = false)String address,@RequestParam(value = "numbercount",required = false)String numbercount){
-        int coutnNumbers = Integer.parseInt(numbercount);
-        hotelService.createNewHotel(name, address);
-        hotelService.addNewRoom(coutnNumbers, name);
-        return "redirect:/admin";
-    }
+    @GetMapping("/sign_up")
+    public String getSignPage() {return "sign_up";}
 
-    @PostMapping("/deleteHotel")
-    public String deleteHotel(@RequestParam(value = "hotelId",required = false)String hotelId){
-        hotelService.deleteByHotelId(hotelId);
-        return "redirect:/admin";
-    }
+    @Autowired
+    UserService userService;
 
-    @PostMapping("/deleteRoom")
-    public String deleteRoom(@RequestParam(value = "roomId",required = false)String roomId){
-        hotelService.deleteByRoomId(roomId);
+    @PostMapping("/sign_up")
+    public String addNewUsers(@RequestParam(value = "username")String username, @RequestParam(value = "password")String password, @RequestParam(value = "role", required = false)String role){
+        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+        if(!userService.saveUser(new Admins("admin", username, bCryptPasswordEncoder.encode(password)))){
+            return "redirect:/admin/sign_up";
+        }
+        System.out.println("New user: "+username + " " +role);
         return "redirect:/admin";
     }
 }
-*/
