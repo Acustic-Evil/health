@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style.css">
+    <title>BACK | TEST | DAB</title>
+</head>
+
+<body class="body">
+    
+    <header class="header">
+        <div class="container">
+        <div class="logo">DAB Health</div>
+            <div class="navigation">
+                <div ><a class="nav-element" href="/logout">Выход</a></div>
+                <div ><a class="nav-element" href="/">Главная</a></div>
+                <div ><a class="nav-element" href="/contacts">Контакты</a></div>
+                <div ><a class="nav-element" href="/articles">Статьи</a></div>
+            </div>
+        </div>
+    </header>
+    <form class="container" action="/test/backSurvey" method="post">
+        <div class="form-title main">Прохождение тестирования</div>
+        <div class="experts">
+        <div class="ex-title">Боль в спине</div>
+            <div class="vivid n" th:if="${param.errorValue}">Нужно отметить все вопросы!</div>
+        <div class="survey-cont">
+                <div class="questio"> 1. В какой области испытываете боли?</div>
+                <div> <input type="radio" name="question1" value="1">Поясница</div>
+                <div> <input type="radio" name="question1" value="2">Шейный отдел</div>
+                <div> <input type="radio" name="question1" value="3">Грудной отдел</div>
+                <div> <input type="radio" name="question1" value="4">Копчик</div>
+        </div>
+            <div class="survey-cont">
+                <div class="questio"> 2. Связана ли боль с поднятием тяжестей или чрезмерной физической нагрузкой?</div>
+                <div> <input type="radio" name="question2" value="1">Да</div>
+                <div> <input type="radio" name="question2" value="2">Нет</div>
+            </div>
+            <div class="survey-cont">
+                <div class="questio"> 3. Каков ваш образ жизни?</div>
+                <div> <input type="radio" name="question3" value="1">Офисная работа, я много сижу за компьютером </div>
+                <div> <input type="radio" name="question3" value="2">Активная работа, требующая поднятия тяжестей</div>
+                <div> <input type="radio" name="question3" value="3">Активная работа, не требующая поднятия тяжестей</div>
+            </div>
+            <div class="survey-cont">
+                <div class="questio">4.У вас прогиб в…</div>
+                <div> <input type="radio" name="question4" value="1">Пояснице?</div>
+                <div> <input type="radio" name="question4" value="2">Шейном отделе?</div>
+            </div>
+        <div class="button">
+                <button class="submit ex" type="submit">Ответить</button>
+                <div><a class="nav-element" href="/test">К выбору теста</a></div>
+        </div>
+        </div> 
+       
+        
+         
+    </form>
+    
+   
+</body>
+</html>

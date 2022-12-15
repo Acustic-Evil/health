@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/style.css">
     <title>ADM| PATIENTS | DAB</title>
 </head>
 
@@ -13,12 +13,7 @@
         <div class="container">
         <div class="logo">DAB Health</div>
             <div class="navigation">
-                <div ><a class="nav-element" href="sign_in.html">Вход</a></div>
-                <div ><a class="nav-element" href="index.html">Главная</a></div>
-                 <div ><a class="nav-element" href="profile.html">Мед карта</a></div>
-                <div ><a class="nav-element" href="contacts.html">Контакты</a></div>
-                <div ><a class="nav-element" href="articles.html">Статьи</a></div>
-
+                <a class="nav-element" href="/logout">Выход</a>
             </div>
         </div>
     </header>
@@ -26,22 +21,36 @@
     <div class="experts">
         <br>
         <div class="button">
-             
-                <div><a class="nav-element" href="patients.html">Показать экспертов</a></div>
-                <div><a class="nav-element" href="users.html">Показать пользователей</a></div>
-                <div><a class="nav-element" href="admins.html">Показать администраторов</a></div>
+                <div><a class="nav-element" href="/admin/expertList">Показать экспертов</a></div>
+                <div><a class="nav-element" href="/admin/userList">Показать пользователей</a></div>
+                <div><a class="nav-element" href="/admin/adminList">Показать администраторов</a></div>
         </div>
-        <div class="ex-title">Список пациентов</div>
+        <div class="ex-title">Таблица пациентов</div>
          <div class="form-experts">
-                    <div class="field ex">
-                        <div class="input-field ex" id="fullname">ФИО</div>
-                        <div class="input-field ex" id="login">Логин</div>
-                        <div class="input-field ex" id="password">Пароль</div>
-                        <button>&#10005;</button> 
-                        <div> </div>
-                       
-                    </div>
-                    <div class="line"></div>             
+             <div class="field ex">
+                 <table>
+                     <thead>
+                     <tr>
+                         <th>ФИО</th>
+                         <th>Почта</th>
+                         <th>Удаление пациента</th>
+                     </tr>
+                     </thead>
+                     <tbody>
+                     <tr th:each="users: ${patients}">
+                         <td th:text="${users.full_name}"></td>
+                         <td th:text="${users.username}"></td>
+                         <td>
+                             <!--<form th:action="@{/admin/deleteUsr/{id}(id=${users.getId()})}" method="post">-->
+                             <form th:action="'/admin/deletePatient/' + ${users.id}" method="post">
+                                 <button class="nav-element n" type="submit" >&#10005;</button> <!--крест-->
+                             </form>
+                         </td>
+                     </tr>
+                     </tbody>
+                 </table>
+             </div>
+             <div class="line"></div>
          </div>
          <br>
     </div> 

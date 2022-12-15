@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style.css">
+    <title>STOMACH | TEST | DAB</title>
+</head>
+
+<body class="body">
+    <header class="header">
+        <div class="container">
+        <div class="logo">DAB Health</div>
+            <div class="navigation">
+                <div ><a class="nav-element" href="/logout">Выход</a></div>
+                <div ><a class="nav-element" href="/">Главная</a></div>
+                <div ><a class="nav-element" href="/contacts">Контакты</a></div>
+                <div ><a class="nav-element" href="/articles">Статьи</a></div>
+            </div>
+        </div>
+    </header>
+    <form class="container">
+        <div class="form-title main">Прохождение тестирования</div>
+        <div class="experts">
+            <div class="ex-title"> Боль в желудке</div>
+            <div class="vivid n" th:if="${param.errorValue}">Нужно отметить все вопросы!</div>
+            <div class="survey-cont">
+                <div class="questio"> 1. В каком месте испытываете боли?</div>
+                <div><input type="radio" name="question1" value="1">Эпигастральная область </div>
+                <div> <input type="radio" name="question1" value="2">Правая подвздошная область</div>
+                <div> <input type="radio" name="question1" value="3">Левая подвздошная область</div>
+            </div>
+                <div class="survey-cont">
+                    <div class="questio"> 2.Связана ли боль с приемом пищи?</div>
+                    <div> <input type="radio" name="question2" value="1">Да, во время приема пищи</div>
+                    <div> <input type="radio" name="question2" value="2">Да, после приема пищи</div>
+                    <div> <input type="radio" name="question2" value="3">Да, на голодный желудок</div>
+                    <div> <input type="radio" name="question2" value="4">Нет</div>
+                </div>
+                <div class="survey-cont">
+                    <div class="questio"> 3. Сопровождается ли боль запорами?</div>
+                    <div> <input type="radio" name="question3" value="1">Да</div>
+                    <div> <input type="radio" name="question3" value="2">Нет</div>
+                </div>
+                <div class="survey-cont">
+                    <div class="questio">4. Есть ли у вас изжога?</div>
+                    <div> <input type="radio" name="question4" value="1">Да</div>
+                    <div> <input type="radio" name="question4" value="2">Нет</div>
+                </div>
+            <div class="button">
+                    <button class="submit ex" type="submit">Ответить</button>
+                    <div><a class="nav-element" href="/test">К выбору теста</a></div>
+            </div>
+        </div> 
+       
+        
+         
+    </form>
+    
+   
+</body>
+</html>

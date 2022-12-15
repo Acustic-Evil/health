@@ -28,7 +28,7 @@ public class Login {
     @PostMapping("/sign_up")
     public String addNewUsers(@RequestParam(value = "username") String username, @RequestParam(value = "full_name") String full_name, @RequestParam(value = "password") String password) {
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-        if (!userService.saveUser(new UserSystem(full_name, username, "admin", bCryptPasswordEncoder.encode(password)))) {
+        if (!userService.saveUser(new UserSystem(full_name, username, "user", bCryptPasswordEncoder.encode(password)))) {
             return "redirect:/sign_up";
         }
         System.out.println("New user: " + full_name + "; login: " + username);

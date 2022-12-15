@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style.css">
+    <title>Survey | DAB</title>
+</head>
+
+<body class="body">
+
+<header class="header">
+    <div class="container">
+        <div class="logo">DAB Health</div>
+        <div class="navigation">
+            <div ><a class="nav-element" href="/logout">Выход</a></div>
+            <div ><a class="nav-element" href="/">Главная</a></div>
+            <div ><a class="nav-element" href="/contacts">Контакты</a></div>
+            <div ><a class="nav-element" href="/articles">Статьи</a></div>
+        </div>
+    </div>
+</header>
+<div class="container">
+
+    <div class="experts">
+        <div class="ex-title"> Постановка диагноза</div>
+        <div class="survey-cont">
+            <div class="question"> Ваш диагноз</div>
+            <div class="vivid" th:if="${param.cancer}">У вас рак сердца 😂</div>
+            <div class="vivid" th:if="${param.stenocardia}">Стенокардия</div>
+            <div class="vivid" th:if="${param.stenocardiaANDheartFailure}">Стенокардия и сердечная недостаточность</div>
+            <div class="vivid" th:if="${param.CoronaryHeartDiseaseORattackOfAtrialFibrillation}">ИБС, Приступ мерцательной аритмии</div>
+            <div class="vivid" th:if="${param.weDonKnow}">Просто защимило нерв</div>
+            <div class="vivid" th:if="${param.hypertension}">Гипертония</div>
+            <div class="vivid" th:if="${param.insomnia}">Хронический недосып</div>
+            <div class="vivid" th:if="${param.headache}">Головная боль от напряжения</div>
+            <div class="vivid" th:if="${param.hyperlardhyperlard}">Гиперлардоз</div>
+            <div class="vivid" th:if="${param.radicul}">Радикулопатия</div>
+            <div class="vivid" th:if="${param.scoliosis}">Сколиоз</div>
+            <div class="vivid" th:if="${param.hyperkif}">Гиперкифоз</div>
+            <div class="vivid" th:if="${param.simplePain}">Обычное напряжение в спине</div>
+            <div class="vivid" th:if="${param.gutsBurn}">Воспаление кишечника</div>
+            <div class="vivid" th:if="${param.ezofag}">Эзофагит</div>
+            <div class="vivid" th:if="${param.yazva}">Язва желудка/кишечника</div>
+            <div class="vivid" th:if="${param.gastrits}">Гастрититы</div>
+            <div class="vivid" th:if="${param.gutsANDselez}">Проблемы с кишечником и селезенкой</div>
+            <div class="vivid" th:if="${param.guts}">Проблемы с кишечником</div>
+            <div class="vivid" th:if="${param.poisons}">Отравление</div>
+
+        </div>
+        <div class="button">
+            <a href="/test" class="nav-element" type="submit">К выбору теста</a>
+        </div>
+        <br>
+    </div>
+
+
+
+</div>
+
+
+</body>
+</html>

@@ -3,572 +3,76 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/style.css">
     <title>ADM| EXPERTS | DAB</title>
 </head>
-<style>
-    *,
-    *:before,
-    *:after
-    {
-        box-sizing: border-box;
-    }
-    *
-    {
-        margin: 0;
-        padding: 0;
-    }
-    html,
-    head,
-    .body
-    {
-        min-height: 100vh;
-        background-color: #def8ff7a;
-        line-height: 1.8;
-        font-family: Arrial;
-
-
-    }
-    .subtitle
-    {
-        padding: 0 20px;
-        display: flex;
-
-    }
-    .info
-    {
-        margin: 0 auto;
-        width: 45%;
-        font-size: 20px;
-        line-height: 1.5;
-    }
-
-
-    .container
-    {
-
-        margin: 0 auto;
-        width: 1100px;
-        max-width: 100%;
-    }
-    .header
-    {
-        background-color: #62929a	;
-        color:white;
-        position: relative;
-        z-index: 3;
-    }
-
-    .logo
-    {
-        font-size: 40px;
-        text-shadow: 0.05em 0 0 black;
-    }
-
-    hi, h2, h3, h4, h5, div
-    {
-        margin: 0;
-        padding: 0;
-    }
-    .navigation
-    {
-        position: absolute;
-        right: 30px;
-        top: 20px;
-        display: flex;
-        position: absolute;
-        z-index: 10;
-    }
-    .nav-element
-    {
-        font-size: 17px;
-        padding-right: 15px;
-        text-decoration: none;
-        color: white;
-        transition: .6s linear;
-    }
-    .nav-element:hover
-    {
-        text-shadow: (0 0 0 1);
-        text-decoration: underline;
-        color: lightgoldenrodyellow;
-    }
-    .modal
-    {
-        padding:  10px;
-        background-color: #def8ff7a;
-        margin: 10px 0 10px ;
-        color: white;
-
-        position: fixed;
-        top: 0;
-        left: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-    }
-    .form-container
-    {
-        margin: 25px auto;
-        border-radius: 10px;
-        width: 85%;
-        background-color: #ffffff66;
-        padding: 20px 30px;
-        box-shadow:0 0 15px 1px rgba(0,0,0,0.2);
-
-    }
-    .modal-content
-    {
-        box-shadow:0 0 15px 4px rgba(0,0,0,0.3);
-        font-size: 25px;
-        max-width: 700px;
-        width: 100%;
-        background-color: #62929a	;
-        border-radius: 10px;
-    }
-
-    .modal-content.contacts
-    {
-        max-width: 800px;
-    }
-
-    .form-title
-    {
-        margin: 10px;
-        font-size: 30px;
-        text-align: center;
-        text-shadow: 0.05em 0 0 black;
-    }
-
-    .main-tatile
-    {
-        margin: 0;
-        font-size: 20px;
-        text-align: center;
-
-    }
-    .form-title.main
-    {
-        text-shadow: none;
-    }
-
-    .form-title.surv
-    {
-        text-shadow: none;
-        font-size: 17px;
-        margin: 0;
-    }
-
-    .field
-    {
-        padding: 10px 0;
-    }
-
-    .line
-    {
-        border-bottom: 1px solid #ffffff6b;
-    }
-    .input-field
-    {
-
-        border-radius: 0;
-        width: 100%;
-        font-size: 17px;
-        border-radius: 5px;
-        height: 30px;
-        outline: none;
-        background: transparent;
-        border: none;
-        color: white;
-        font-family: inherit;
-        padding-bottom: 0;
-
-    }
-
-
-
-    .input-field::placeholder
-    {
-        color:white;
-    }
-
-    .button
-    {
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        margin: 15px 0;
-
-
-    }
-    .submit
-    {
-        margin: 0 10px ;
-        box-shadow:0 0 15px 1px rgba(0,0,0,0.2);
-        border: 1px white;
-        text-shadow: 0.05em 0 0 black;
-        padding: 5px 20px;
-        /* border: none;*/
-        background-color: #ffffff66;
-        border-radius: 10px;
-        color: white;
-        transition: .7s;
-        font-size: 17px;
-    }
-
-    .submit:hover
-    {
-
-        text-shadow: (0 0 0 1);
-        color: lightgoldenrodyellow;
-        cursor: pointer;
-    }
-
-    .button.in
-    {
-        color: white;
-        text-decoration: none;
-        font-size: 17px;
-        transition: .7s;
-    }
-
-    .button.in:hover
-    {
-        text-shadow: (0 0 0 1);
-        text-decoration: underline;
-        color: lightgoldenrodyellow;
-    }
-    .supblock
-    {
-        display: flex;
-    }
-    .block
-    {
-        display: flex;
-        margin: 10px auto;
-        width: 90%;
-        border-bottom: 1px solid #ffffff6b;
-    }
-    .block.last
-    {
-        justify-content: center;
-        border-bottom: none;
-    }
-    .right-img
-    {
-        padding: 2px;
-        line-height: 1.2;
-
-        margin: 0 10px;
-        font-size: 17px;
-
-
-    }
-    .right-img.title
-    {
-        margin: 0;
-    }
-    .right-img.title.main
-    {
-
-        text-align: center;
-    }
-    .right-img.sub
-    {
-        font-size: 15px;
-        margin: 0;
-    }
-    .img
-    {
-        margin: 10px;
-        background-color: transparent;
-
-        max-width: 50px;
-        max-height: 40px;
-        width: 100%;
-        height: 100%;
-    }
-
-    .main-img
-    {
-        background-color: antiquewhite;
-        max-height: 600px;
-        max-width: 1000px;
-        width: 100%;
-        height: 100%;
-        margin: 40px auto;
-    }
-    .survey
-    {
-        background-color: #62929a;
-
-        border-radius: 10px;
-        max-width: 800px;
-        width: 100%;
-
-
-        box-shadow:0 0 15px 1px rgba(0,0,0,0.2);
-        margin: 0 auto;
-    }
-    .survey-cont
-    {
-        width: 85%;
-        margin: 20px auto;
-        border-radius: 10px;
-        background-color: #ffffff66;
-        padding: 20px 40px;
-
-    }
-    .question
-    {
-        text-decoration: none;
-        color: black;
-        border-radius: 10px;
-        background-color: white;
-        padding: 10px 60px;
-        margin: 15px auto;
-        transition: 0.5s;
-        display: block;
-        width: 100%;
-        border: none;
-        animation-delay:
-        color: white;
-        font-size: 15px;
-
-    }
-    .survey-main
-    {
-        font-size: 17px;
-
-    }
-    .profile
-    {
-        height:  100%;
-        max-height: 100vh;
-
-    }
-    .profile-cont
-    {
-        position: fixed;
-        padding: 20px;
-        background-color: papayawhip;
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    img
-    {
-
-
-    }
-    .o
-    {
-        text-align: center;
-        background-color: aqua;
-    }
-
-    .listen
-    {
-        padding: 30px 150px ;
-
-    }
-    .nav-element.list
-    {
-        font-size: 26px;
-        color: black;
-
-    }
-
-    .subtitle.states
-    {
-        padding: 10px 0;
-        display: block;
-        font-size: 20px;
-        line-height: 1.6;
-    }
-    .suptitle
-    {
-        font-weight: 550;
-        font-size: 25px;
-
-    }
-    option
-    {
-        color: black;
-        background: none;
-    }
-    .how
-    {
-        padding-left: 20px;
-    }
-    .adm
-    {
-        width: 100%;
-        padding: 10px;
-        font-size: 30px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center
-    }
-    .action
-    {
-        text-decoration: none;
-        color: white;
-        transition: .9s linear;
-    }
-    .action:hover
-    {
-        text-decoration: underline;
-        color: lightgoldenrodyellow;
-        text-shadow: (0 0 0 1);
-    }
-    .experts
-    {
-        max-width: 650px;
-        width: 100%;
-        background-color: #62929a;;
-        margin: 50px auto;
-        border-radius: 10px;
-
-    }
-
-    .form-experts
-    {
-        position: relative;
-        border-radius: 10px;
-        width: 85%;
-        margin: 20px auto;
-        padding:0 15px;
-        background-color: #ffffff66;
-    }
-    .ex-title
-    {
-        color: white;
-        text-align-last: center;
-        padding: 10px;
-        font-size: 30px;
-    }
-    .submit.ex
-    {
-        margin-bottom: 20px;
-    }
-
-    .input.field.ex
-    {
-        width: 100%;
-    }
-    .field.ex
-    {
-        width: 100%;
-        display: flex;
-    }
-    button
-    {
-        padding: 0 8px;
-        border: none;
-        background: none;
-    }
-    button:hover
-    {
-        cursor: pointer;
-    }
-    .line.s
-    {
-        margin-bottom: 10px;
-    }
-    .nav-el {
-        border: none;
-        background: none;
-        font-family: inherit;
-        font-size: 17px;
-        padding-right: 15px;
-        text-decoration: none;
-        color: white;
-        transition: .6s linear;
-    }
-
-</style>
 
 <body class="body">
-    
-    <header class="header">
-        <div class="container">
+<header class="header">
+    <div class="container">
         <div class="logo">DAB Health</div>
-            <div class="navigation">
-                <div ><a class="nav-element" href="sign_in.html">Вход</a></div>
-                <div ><a class="nav-element" href="index.html">Главная</a></div>
-                <div ><a class="nav-element" href="contacts.html">Контакты</a></div>
-                <div ><a class="nav-element" href="articles.html">Статьи</a></div>
-
+        <div class="navigation">
+            <a class="nav-element" href="/logout">Выход</a>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <form class="experts" th:action="@{/admin/add_expert}" method="post">
+        <div class="ex-title">Регистрация новых экспертов</div>
+        <div class="form-experts">
+            <div class="field">
+                <input class="input-field" type="text" placeholder="Введите ФИО" name="full_name" >
+                <div class="line"></div>
+            </div>
+            <div class="field">
+                <input class="input-field" type="email" placeholder="Введите e-mail" name="email" >
+                <div class="line"></div>
+            </div>
+            <div class="field">
+                <input class="input-field" type="password" placeholder="Введите пароль" name="password" >
+                <div class="line"></div>
             </div>
         </div>
-    </header>
-    <div class="container">
-     <form class="experts" th:action="@{/add_expert}" method="post">
-        <div class="ex-title">Регистрация новых экспертов</div>
-         <div class="form-experts">
-                      <div class="field">
-                          <input class="input-field" type="text" placeholder="Введите ФИО" name="full_name" >
-                        <div class="line"></div>
-                    </div>
-                    <div class="field">
-                        <input class="input-field" type="email" placeholder="Введите e-mail" name="email" >
-                        <div class="line"></div>
-                    </div>
-                    <div class="field">
-                        <input class="input-field" type="password" placeholder="Введите пароль" name="password" >
-                        <div class="line"></div>
-                    </div>
-         </div>
         <div class="button">
             <button class="submit ex" type="submit">Зарегистрировать</button>
         </div>
     </form>
-   <div class="experts">
-        <div class="ex-title">Таблица экспертов</div>
-         <div class="form-experts">
-                    <div class="field ex">
-                        <table>
-                            <thead>
-                            <tr>
-                                <th>ФИО</th>
-                                <th>Логин</th>
-                                <th>Пароль</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr th:each="UserSystem: ${expert}">
-                                <td><span th:text="UserSystem.findAllByRole('expert')"></span></td>
-
-                            </tr>
-                            </tbody>
-
-                        </table>
-                        <!-- TODO:Отображение экспертов-->
-
-                        <!--<div class="input-field ex" id="fullname">ФИО</div>
-                        <div class="input-field ex" id="login">Логин</div>
-                        <div class="input-field ex" id="password">Пароль</div>-->
-
-
-                        <button>&#10005;</button> 
-                        <div> </div>
-                       
-                    </div>
-                    <div class="line"></div>             
-         </div>
-         <div class="button">
-                <button class="submit ex" type="submit">Отобразить список пациентов</button>
-             <button class="submit ex" type="submit">Отобразить список посетителей</button>
+    <div class="experts">
+        <br>
+        <div class="button">
+            <div><a class="nav-element" href="/admin/userList">Показать пользователей</a></div>
+            <div><a class="nav-element" href="/admin/patientList">Показать пациентов</a></div>
+            <div><a class="nav-element" href="/admin/adminList">Показать администраторов</a></div>
         </div>
-       
-    </div> 
+        <div class="ex-title">Таблица экспертов</div>
+           <div class="form-experts">
+               <div class="field ex">
+                   <table>
+                       <thead>
+                       <tr>
+                           <th>ФИО</th>
+                           <th>Почта</th>
+                           <th>Удаление эксперта</th>
+                       </tr>
+                       </thead>
+                       <tbody>
+                       <tr th:each="users: ${experts}">
+                           <td th:text="${users.full_name}"></td>
+                           <td th:text="${users.username}"></td>
+                           <td>
+                               <!--<form th:action="@{/admin/deleteUsr/{id}(id=${users.getId()})}" method="post">-->
+                               <form th:action="'/admin/deleteExpert/' + ${users.id}" method="post">
+                                   <button class="nav-element n" type="submit" >&#10005;</button> <!--крест-->
+                               </form>
+                           </td>
+                       </tr>
+                       </tbody>
+                   </table>
+               </div>
+               <div class="line"></div>
+           </div>
+        <br>
     </div>
+</div>
 </body>
 </html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style.css">
+    <title>HEAD| TEST | DAB</title>
+</head>
+
+<body class="body">
+    
+    <header class="header">
+        <div class="container">
+        <div class="logo">DAB Health</div>
+            <div class="navigation">
+                <div ><a class="nav-element" href="/logout">Выход</a></div>
+                <div ><a class="nav-element" href="/">Главная</a></div>
+                <div ><a class="nav-element" href="/contacts">Контакты</a></div>
+                <div ><a class="nav-element" href="/articles">Статьи</a></div>
+            </div>
+        </div>
+    </header>
+    <form class="container" action="/test/headSurvey" method="post">
+        <div class="form-title main">Прохождение тестирования</div>
+        <div class="experts">
+        <div class="ex-title"> Головная боль</div>
+            <div class="vivid n" th:if="${param.errorValue}">Нужно отметить все вопросы!</div>
+        <div class="survey-cont">
+                <div class="questio">  1.Как часто болит голова?</div>
+                <div> <input type="radio" name="question1" value="1">Ежедневно</div>
+                <div> <input type="radio" name="question1" value="2">Раз в неделю или реже</div>
+                <div> <input type="radio" name="question1" value="3">Иногда, после психоэмоционального напряжения</div>
+        </div>
+            <div class="survey-cont">
+                <div class="questio"> 2. В какой области испытываете боль</div>
+                <div> <input type="radio" name="question2" value="1">Лобная область</div>
+                <div> <input type="radio" name="question2" value="2">Теменная область</div>
+                <div> <input type="radio" name="question2" value="3">Височная</div>
+            </div>
+            <div class="survey-cont">
+                <div class="questio"> 3. Какова характер боли? </div>
+                <div> <input type="radio" name="question3" value="1">Пульсирующая боль </div>
+                <div> <input type="radio" name="question3" value="2">Локализованная боль </div>
+                <div> <input type="radio" name="question3" value="3">Диффузная боль</div>
+            </div>
+            <div class="survey-cont">
+                <div class="questio">4. Отмечалось ли у вас когда-либо повышенное давление?</div>
+                <div> <input type="radio" name="question4" value="1">Да</div>
+                <div> <input type="radio" name="question4" value="2">Нет </div>
+            </div>
+            <div class="survey-cont">
+                <div class="questio">5. Есть ли скованность в шейном отделе при движении и повороте?</div>
+                <div> <input type="radio" name="question5" value="1">Да</div>
+                <div> <input type="radio" name="question5" value="2">Нет </div>
+            </div>
+            <div class="survey-cont">
+                <div class="questio">6. Высыпаетесь ли вы?</div>
+                <div> <input type="radio" name="question6" value="1">Да</div>
+                <div> <input type="radio" name="question6" value="2">Нет </div>
+            </div>
+            <div class="survey-cont">
+                <div class="questio">7. Сколько часов спите?</div>
+                <div> <input type="radio" name="question7" value="1">8 часов</div>
+                <div> <input type="radio" name="question7" value="2">От 6 до 8 часов</div>
+                <div> <input type="radio" name="question7" value="3">Менее 6 часов</div>
+            </div>
+        <div class="button">
+                <button class="submit ex" type="submit">Ответить</button>
+                <div><a class="nav-element" href="/test">К выбору теста</a></div>
+        </div>
+        </div>
+    </form>
+    
+   
+</body>
+</html>

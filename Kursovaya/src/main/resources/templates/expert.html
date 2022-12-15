@@ -65,7 +65,7 @@
         text-shadow: 0.05em 0 0 black;
     }
 
-    hi, h2, h3, h4, h5, div
+    h1, h2, h3, h4, h5, div
     {
         margin: 0;
         padding: 0;
@@ -492,6 +492,44 @@
         color: white;
         transition: .6s linear;
     }
+    .field.ex.s
+    {
+        display: block;
+    }
+    .error
+    {
+        text-align: center;
+        color: #f36767;
+        font-size: 17px;
+
+    }
+    .success
+    {
+        text-align: center;
+        color: #b4f310;
+        font-size: 17px;
+
+    }
+    .cont-form
+    {
+        width: 90%;
+        height: 95%;
+        margin: 0 auto;
+        padding-bottom: 10px;
+    }
+    .input-field.q
+    {
+        max-width: 467px;
+        min-height: 30px;
+    }
+    .input-field::placeholder
+    {
+        color: rgba(40, 39, 39, 0.74);
+    }
+    .input-field
+    {
+        color:white;
+    }
 
 </style>
 <body class="body">
@@ -500,26 +538,66 @@
         <div class="container">
         <div class="logo">DAB Health</div>
             <div class="navigation">
-                <a class="nav-element" href="/sign_in">Вход</a>
-                <a class="nav-element" href="/">Главная</a>
-                <a class="nav-element" href="/articles">Статьи</a>
-                <a class="nav-element" href="/contacts">Контакты</a>
-
+                <a class="nav-element" href="/logout">Выход</a>
             </div>
         </div>
     </header>
     <div class="container"> 
    <div class="experts">
-        <div class="ex-title"> Добавление нового вопроса</div>
-         <div class="form-experts">
-                    <div class="field ex">
-                        <textarea class="input-field" placeholder="Введите вопрос" name="full_name"></textarea>
-                    </div>          
-         </div>
-         <div class="button">
-                <button class="submit ex" type="submit">Добавить вопрос</button>
-         </div>
-       
+       <form th:action="@{/expert/newQuestion}" method="post">
+           <div class="cont-form">
+               <div class="ex-title"> Добавление нового вопроса</div>
+               <div class="form-experts">
+                   <div class="field ex s">
+                       <div class="field">
+                       <textarea class="input-field q" placeholder="Введите вопрос" name="question"></textarea>
+                           <div class="line"></div>
+                       </div>
+
+                       <div class="field">
+                       <input class="input-field" placeholder="Введите чать тела" name="bodyPart" value="">
+                           <div class="line"></div>
+                       </div>
+
+                       <div class="field">
+                       <input class="input-field" placeholder="Введите связанную с вопросом болезнь" name="illness" value="">
+                           <div class="line"></div>
+                       </div>
+
+                       <div class="field">
+                       <input class="input-field" placeholder="Введите первый вариант ответа" name="var1" value="">
+                           <div class="line"></div>
+                       </div>
+
+                       <div class="field">
+                       <input class="input-field" placeholder="Введите второй вариант ответа" name="var2" value="">
+                           <div class="line"></div>
+                       </div>
+
+                       <div class="field">
+                       <input class="input-field" placeholder="Введите третий вариант ответа" name="var3" value="">
+                           <div class="line"></div>
+                       </div>
+
+                   </div>
+               </div>
+               <div class="button">
+                   <button class="submit" type="submit">Добавить вопрос</button>
+               </div>
+               <div class="error" th:if="${param.errorValue}">
+                   Введите все поля и хотя бы 2 варианта ответа!
+               </div>
+               <div class="error" th:if="${param.errorSameVar}">
+                   Введены два одинаковых ответа!
+               </div>
+               <div class="error" th:if="${param.errorSameQuestion}">
+                   Такой вопрос уже есть!
+               </div>
+               <div class="success" th:if="${param.success}">
+                   Вопрос добавлен!
+               </div>
+           </div>
+       </form>
     </div> 
     </div>
 </body>

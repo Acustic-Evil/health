@@ -502,7 +502,11 @@
         <div class="container">
         <div class="logo">DAB Health</div>
             <div class="navigation">
+                <!--<div th:if="authenticated == true"><a class="nav-element" href="/logout">Выход</a></div>-->
                 <a class="nav-element" href="/sign_in">Вход</a>
+                <a class="nav-element" href="/admin">Панель администратора</a>
+                <a class="nav-element" href="/expert">Панель эксперта</a>
+                <a class="nav-element" href="/test">Пройти тестирование</a>
                 <a class="nav-element" href="/articles">Статьи</a>
                 <a class="nav-element" href="/contacts">Контакты</a>
 
@@ -522,7 +526,7 @@
         </div>
         <div class="img2"></div>
         <div class="main-img">
-           <img th:src="@{/img/lab_back.jpg}" width="1000px" height="600px">
+           <img th:src="@{/img/лабфон.jpg}" width="1000px" height="600px">
         </div>
     <div class="form-title main">*Лучший онлайн сервис по диагностике заболеваний-DAB-health</div>
     

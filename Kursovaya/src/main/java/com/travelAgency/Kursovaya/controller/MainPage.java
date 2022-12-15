@@ -10,15 +10,12 @@ public class MainPage {
         return "index";
     }
 
-    @GetMapping("/index_auth")
-    public String getMainAuthPage(){return "index_auth";}
-
     @GetMapping("/articles")
     public String getArticlesPage(){
         return "articles";
     }
 
-    @GetMapping("/Alko")
+    @GetMapping("/alko")
     public String getAlkoPage(){
         return "Alko";
     }
